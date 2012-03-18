@@ -56,7 +56,8 @@ class Angles(Prosthetic):
   @classmethod
   def time_between_runs(cls):
       # daily
-      return 24*60*60
+      # return 24*60*60
+      return 2*60*60
 
   def post_oauth_callback(self):
     return redirect(reverse(views.config, args=[self.token.oauth_key]))
