@@ -1,8 +1,10 @@
 package com.weavrs.gephi;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
 import org.gephi.data.attributes.api.AttributeColumn;
 import org.gephi.data.attributes.api.AttributeController;
 import org.gephi.data.attributes.api.AttributeModel;
@@ -36,6 +38,7 @@ import org.gephi.ranking.plugin.transformer.AbstractColorTransformer;
 import org.gephi.ranking.plugin.transformer.AbstractSizeTransformer;
 import org.gephi.statistics.plugin.GraphDistance;
 import org.gephi.partition.api.Partition;
+import org.gephi.partition.api.Part;
 import org.gephi.partition.api.PartitionController;
 import org.gephi.partition.plugin.NodeColorTransformer;
 import org.gephi.statistics.plugin.Modularity;
@@ -43,6 +46,31 @@ import org.openide.util.Lookup;
 
 public class Render {
   public static void main(String[] args) throws Exception {
+    render();
+  }
+
+  public static void benchmark() throws Exception {
+    System.out.println("Warming up...");
+    int runs = 10;
+    for(int i = 0; i < runs; i++) {
+      render();
+    }
+    System.out.println("Benchmarking...");
+    long times[] = new long[runs];
+    for(int i = 0; i < runs; i++) {
+      long t = System.currentTimeMillis();
+      render();
+      times[i] = System.currentTimeMillis() - t;
+    }
+    float avg = 0;
+    for(int i = 0; i < runs; i++) {
+      avg += times[i];
+    }
+    avg /= runs;
+    System.out.format("%d runs took %f milliseconds per run.\n", runs, avg);
+  }
+
+  public static void render() throws Exception {
     ProjectController pc = Lookup.getDefault().lookup(ProjectController.class);
     pc.newProject();
     Workspace workspace = pc.getCurrentWorkspace();
@@ -102,9 +130,20 @@ public class Render {
     Partition p2 = partitionController.buildPartition(modColumn, graph);
     System.out.println(p2.getPartsCount() + " partitions found");
     NodeColorTransformer nodeColorTransformer2 = new NodeColorTransformer();
-    nodeColorTransformer2.randomizeColors(p2);
+    Color[] colors = new Color[] {
+      new Color(0,160,176),
+      new Color(106,74,60),
+      new Color(204,51,63),
+      new Color(235,104,65),
+      new Color(237,201,81)
+    };
+    int i = 0;
+    for(Part p : p2.getParts()) {
+      System.out.format("Partition %s = %s\n", p, colors[i]);
+      nodeColorTransformer2.getMap().put(p.getValue(), colors[i]);
+      i += 1;
+    }
     partitionController.transform(p2, nodeColorTransformer2);
-
 
     //Rank size by centrality
     AttributeColumn centralityColumn = attributeModel.getNodeTable().getColumn(GraphDistance.BETWEENNESS);
@@ -116,9 +155,10 @@ public class Render {
 
     //Preview
     model.getProperties().putValue(PreviewProperty.SHOW_NODE_LABELS, Boolean.TRUE);
-    model.getProperties().putValue(PreviewProperty.EDGE_COLOR, new EdgeColor(Color.GRAY));
-    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(0.1f));
-    model.getProperties().putValue(PreviewProperty.NODE_LABEL_FONT, model.getProperties().getFontValue(PreviewProperty.NODE_LABEL_FONT).deriveFont(8));
+    model.getProperties().putValue(PreviewProperty.EDGE_COLOR, new EdgeColor(new Color(0.9f,0.9f,0.9f)));
+    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(0.05f));
+    model.getProperties().putValue(PreviewProperty.NODE_BORDER_WIDTH, new Float(0.0f));
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_FONT, new Font("Ostrich Sans", Font.PLAIN, 12));
 
     //Export
     ExportController ec = Lookup.getDefault().lookup(ExportController.class);
@@ -126,8 +166,8 @@ public class Render {
       //ec.exportFile(new File("headless_simple.png"));
       PNGExporter pngExporter = (PNGExporter) ec.getExporter("png");
       pngExporter.setWorkspace(workspace);
-      pngExporter.setWidth(512);
-      pngExporter.setHeight(512);
+      pngExporter.setWidth(2048);
+      pngExporter.setHeight(2048);
       pngExporter.setTransparentBackground(false);
       pngExporter.setMargin(50);
       ec.exportFile(new File("output/out.png"), pngExporter);
