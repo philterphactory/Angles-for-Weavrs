@@ -23,8 +23,10 @@ import org.gephi.io.importer.api.Container;
 import org.gephi.io.importer.api.EdgeDefault;
 import org.gephi.io.importer.api.ImportController;
 import org.gephi.io.processor.plugin.DefaultProcessor;
+import org.gephi.layout.plugin.labelAdjust.LabelAdjust;
 import org.gephi.layout.plugin.force.StepDisplacement;
 import org.gephi.layout.plugin.force.yifanHu.YifanHuLayout;
+import org.gephi.layout.plugin.forceAtlas2.*;
 import org.gephi.preview.api.PreviewController;
 import org.gephi.preview.api.PreviewModel;
 import org.gephi.preview.api.PreviewProperty;
@@ -104,14 +106,28 @@ public class Render {
     GraphView view = filterController.filter(query);
     graphModel.setVisibleView(view);    //Set the filter result as the visible view
 
-    YifanHuLayout layout = new YifanHuLayout(null, new StepDisplacement(1f));
-    layout.setGraphModel(graphModel);
-    layout.resetPropertiesValues();
-    layout.setOptimalDistance(200f);
+    ForceAtlas2 fa2Layout = new ForceAtlas2(new ForceAtlas2Builder());
+    fa2Layout.setGraphModel(graphModel);
+    fa2Layout.resetPropertiesValues();
+    fa2Layout.initAlgo();
+    fa2Layout.setEdgeWeightInfluence(1.0);
+    fa2Layout.setGravity(1.0);
+    fa2Layout.setAdjustSizes(false);
+    fa2Layout.setScalingRatio(5.0);
+    fa2Layout.setBarnesHutTheta(1.2);
+    fa2Layout.setJitterTolerance(0.1);
 
-    layout.initAlgo();
-    for (int i = 0; i < 100 && layout.canAlgo(); i++) {
-      layout.goAlgo();
+    for (int i = 0; i < 150 && fa2Layout.canAlgo(); i++) {
+      fa2Layout.goAlgo();
+    }
+
+    LabelAdjust adjustLayout = new LabelAdjust(null);
+    adjustLayout.setGraphModel(graphModel);
+    adjustLayout.initAlgo();
+    adjustLayout.setSpeed(0.5);
+    adjustLayout.setAdjustBySize(false);
+    for (int i = 0; i < 50000 && adjustLayout.canAlgo(); i++) {
+      adjustLayout.goAlgo();
     }
 
     //Get Centrality
@@ -155,10 +171,11 @@ public class Render {
 
     //Preview
     model.getProperties().putValue(PreviewProperty.SHOW_NODE_LABELS, Boolean.TRUE);
-    model.getProperties().putValue(PreviewProperty.EDGE_COLOR, new EdgeColor(new Color(0.9f,0.9f,0.9f)));
-    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(0.05f));
+    model.getProperties().putValue(PreviewProperty.EDGE_COLOR, new EdgeColor(EdgeColor.Mode.SOURCE));
+    model.getProperties().putValue(PreviewProperty.EDGE_RESCALE_WEIGHT, Boolean.TRUE);
+    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(0.8f));
     model.getProperties().putValue(PreviewProperty.NODE_BORDER_WIDTH, new Float(0.0f));
-    model.getProperties().putValue(PreviewProperty.NODE_LABEL_FONT, new Font("Ostrich Sans", Font.PLAIN, 12));
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_FONT, new Font("Ostrich Sans Rounded", Font.PLAIN, 12));
 
     //Export
     ExportController ec = Lookup.getDefault().lookup(ExportController.class);
