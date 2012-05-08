@@ -135,7 +135,7 @@ public class Render {
     distance.setDirected(true);
     distance.execute(graphModel, attributeModel);
 
-
+    /*
     //Run modularity algorithm - community detection
     Modularity modularity = new Modularity();
     modularity.execute(graphModel, attributeModel);
@@ -160,6 +160,7 @@ public class Render {
       i += 1;
     }
     partitionController.transform(p2, nodeColorTransformer2);
+    */
 
     //Rank size by centrality
     AttributeColumn centralityColumn = attributeModel.getNodeTable().getColumn(GraphDistance.BETWEENNESS);
@@ -168,6 +169,17 @@ public class Render {
     sizeTransformer.setMinSize(3);
     sizeTransformer.setMaxSize(10);
     rankingController.transform(centralityRanking,sizeTransformer);
+
+    AbstractColorTransformer colorTransformer = (AbstractColorTransformer) rankingController.getModel().getTransformer(Ranking.NODE_ELEMENT, Transformer.RENDERABLE_COLOR);
+    colorTransformer.setColors(new Color[] {
+      Color.decode("0xFE4365"),
+      Color.decode("0xFC9D9A"),
+      Color.decode("0xF9CDAD"),
+      Color.decode("0xC8C8A9"),
+      Color.decode("0x83AF9B")
+    });
+    colorTransformer.setColorPositions(new float[] { 0.23f, 0.30f, 0.36f, 0.43f, 1.0f });
+    rankingController.transform(centralityRanking,colorTransformer);
 
     //Preview
     model.getProperties().putValue(PreviewProperty.SHOW_NODE_LABELS, Boolean.TRUE);
@@ -183,8 +195,8 @@ public class Render {
       //ec.exportFile(new File("headless_simple.png"));
       PNGExporter pngExporter = (PNGExporter) ec.getExporter("png");
       pngExporter.setWorkspace(workspace);
-      pngExporter.setWidth(2048);
-      pngExporter.setHeight(2048);
+      pngExporter.setWidth(768);
+      pngExporter.setHeight(768);
       pngExporter.setTransparentBackground(false);
       pngExporter.setMargin(50);
       ec.exportFile(new File("output/out.png"), pngExporter);
