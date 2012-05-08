@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import org.gephi.filters.spi.FilterBuilder;
 import org.gephi.data.attributes.api.AttributeColumn;
 import org.gephi.data.attributes.api.AttributeController;
 import org.gephi.data.attributes.api.AttributeModel;
@@ -12,7 +13,10 @@ import org.gephi.filters.api.FilterController;
 import org.gephi.filters.api.Query;
 import org.gephi.filters.api.Range;
 import org.gephi.filters.plugin.graph.DegreeRangeBuilder.DegreeRangeFilter;
+import org.gephi.filters.plugin.graph.KCoreBuilder;
+import org.gephi.filters.plugin.graph.KCoreBuilder.KCoreFilter;
 import org.gephi.graph.api.DirectedGraph;
+import org.gephi.graph.api.Graph;
 import org.gephi.graph.api.GraphController;
 import org.gephi.graph.api.GraphModel;
 import org.gephi.graph.api.GraphView;
@@ -26,14 +30,18 @@ import org.gephi.io.processor.plugin.DefaultProcessor;
 import org.gephi.layout.plugin.labelAdjust.LabelAdjust;
 import org.gephi.layout.plugin.force.StepDisplacement;
 import org.gephi.layout.plugin.force.yifanHu.YifanHuLayout;
+import org.gephi.layout.plugin.force.yifanHu.YifanHuProportional;
 import org.gephi.layout.plugin.forceAtlas2.*;
 import org.gephi.preview.api.PreviewController;
 import org.gephi.preview.api.PreviewModel;
 import org.gephi.preview.api.PreviewProperty;
 import org.gephi.preview.types.EdgeColor;
+import org.gephi.preview.types.DependantColor;
+import org.gephi.preview.types.DependantOriginalColor;
 import org.gephi.project.api.ProjectController;
 import org.gephi.project.api.Workspace;
 import org.gephi.ranking.api.Ranking;
+import org.gephi.ranking.api.Interpolator;
 import org.gephi.ranking.api.RankingController;
 import org.gephi.ranking.api.Transformer;
 import org.gephi.ranking.plugin.transformer.AbstractColorTransformer;
@@ -48,20 +56,20 @@ import org.openide.util.Lookup;
 
 public class Render {
   public static void main(String[] args) throws Exception {
-    render();
+    render_zeroinfluencer();
   }
 
   public static void benchmark() throws Exception {
     System.out.println("Warming up...");
     int runs = 10;
     for(int i = 0; i < runs; i++) {
-      render();
+      render1();
     }
     System.out.println("Benchmarking...");
     long times[] = new long[runs];
     for(int i = 0; i < runs; i++) {
       long t = System.currentTimeMillis();
-      render();
+      render1();
       times[i] = System.currentTimeMillis() - t;
     }
     float avg = 0;
@@ -72,7 +80,7 @@ public class Render {
     System.out.format("%d runs took %f milliseconds per run.\n", runs, avg);
   }
 
-  public static void render() throws Exception {
+  public static void render1() throws Exception {
     ProjectController pc = Lookup.getDefault().lookup(ProjectController.class);
     pc.newProject();
     Workspace workspace = pc.getCurrentWorkspace();
@@ -200,6 +208,102 @@ public class Render {
       pngExporter.setTransparentBackground(false);
       pngExporter.setMargin(50);
       ec.exportFile(new File("output/out.png"), pngExporter);
+    } catch (IOException ex) {
+      ex.printStackTrace();
+      return;
+    }
+  }
+
+  public static void render_zeroinfluencer() throws Exception {
+    ProjectController pc = Lookup.getDefault().lookup(ProjectController.class);
+    pc.newProject();
+    Workspace workspace = pc.getCurrentWorkspace();
+
+    //Get models and controllers for this new workspace - will be useful later
+    AttributeModel attributeModel = Lookup.getDefault().lookup(AttributeController.class).getModel();
+    GraphModel graphModel = Lookup.getDefault().lookup(GraphController.class).getModel();
+    PreviewModel model = Lookup.getDefault().lookup(PreviewController.class).getModel();
+    ImportController importController = Lookup.getDefault().lookup(ImportController.class);
+    FilterController filterController = Lookup.getDefault().lookup(FilterController.class);
+    RankingController rankingController = Lookup.getDefault().lookup(RankingController.class);
+
+    //Import file       
+    Container container;
+    File file = new File("data/darth-keywords-dynamic-nodes-and-edges-2012-04.gexf");
+    container = importController.importFile(file);
+    container.getLoader().setEdgeDefault(EdgeDefault.UNDIRECTED);
+
+    importController.process(container, new DefaultProcessor(), workspace);
+
+    //See if graph is well imported
+    Graph graph = graphModel.getGraph();
+    System.out.println("Nodes: " + graph.getNodeCount());
+    System.out.println("Edges: " + graph.getEdgeCount());
+
+    // Filter graph by k-Core (k=9)
+    KCoreBuilder builder = Lookup.getDefault().lookup(KCoreBuilder.class);
+    KCoreBuilder.KCoreFilter kCoreFilter = (KCoreBuilder.KCoreFilter) builder.getFilter();
+    kCoreFilter.setK(9);
+    Query kcoreQuery = filterController.createQuery(kCoreFilter);
+
+    // Check the filter worked
+    GraphView view = filterController.filter(kcoreQuery);
+    graphModel.setVisibleView(view);
+
+    graph = graphModel.getGraphVisible();
+    System.out.println("kcore Filtered Nodes: " + graph.getNodeCount());
+    System.out.println("kcore Filtered Edges: " + graph.getEdgeCount());
+
+    // Rank size by Degree
+    Ranking degreeRanking = rankingController.getModel().getRanking(Ranking.NODE_ELEMENT, Ranking.DEGREE_RANKING);
+    AbstractSizeTransformer sizeTransformer = (AbstractSizeTransformer) rankingController.getModel().getTransformer(Ranking.NODE_ELEMENT, Transformer.RENDERABLE_SIZE);
+    sizeTransformer.setMinSize(100);
+    sizeTransformer.setMaxSize(500);
+    rankingController.transform(degreeRanking,sizeTransformer);
+
+    // Rank color by Degree
+    AbstractColorTransformer colorTransformer = (AbstractColorTransformer) rankingController.getModel().getTransformer(Ranking.NODE_ELEMENT, Transformer.RENDERABLE_COLOR);
+    colorTransformer.setColors(new Color[]{new Color(0x2C7BB6), new Color(0xFFFFBF), new Color(0xD7191C)});
+    colorTransformer.setColorPositions(new float[] { 0.0f, 0.5f, 1.0f });
+
+    //Interpolator interpolator = Interpolator.newBezierInterpolator(0.1f, 0.95f, 0.0f, 1.0f);
+    //Interpolator interpolator = Interpolator.newBezierInterpolator(0.0f, 1.0f, 0.1f, 0.95f);
+    Interpolator interpolator = Interpolator.newBezierInterpolator(0.2f, 0.95f, 1.0f, 1.0f);
+    rankingController.setInterpolator(interpolator);
+    rankingController.transform(degreeRanking,colorTransformer);
+
+    YifanHuLayout layout = new YifanHuProportional().buildLayout();
+    layout.setGraphModel(graphModel);
+    layout.resetPropertiesValues();
+
+    layout.initAlgo();
+    layout.setOptimalDistance(2000f);
+    layout.setInitialStep(400f);
+    layout.setStep(400f);
+    for (int i = 0; i < 500 && layout.canAlgo(); i++) {
+      layout.goAlgo();
+    }
+
+    // Preview properties
+    model.getProperties().putValue(PreviewProperty.SHOW_NODE_LABELS, Boolean.TRUE);
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_SIZE, new Float(5.0));
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_OPACITY, new Float(40.0));
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_COLOR, new DependantOriginalColor(DependantOriginalColor.Mode.PARENT));
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_COLOR, new DependantColor(Color.decode("0x000000")));
+    model.getProperties().putValue(PreviewProperty.BACKGROUND_COLOR, Color.decode("0x000000"));
+    model.getProperties().putValue(PreviewProperty.EDGE_OPACITY, new Float(70.0));
+    model.getProperties().putValue(PreviewProperty.NODE_OPACITY, new Float(10.0));
+    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(10.0));
+    
+    //Export
+    ExportController ec = Lookup.getDefault().lookup(ExportController.class);
+    try {
+      PNGExporter pngExporter = (PNGExporter) ec.getExporter("png");
+      pngExporter.setWorkspace(workspace);
+      pngExporter.setWidth(1024);
+      pngExporter.setHeight(1024);
+      pngExporter.setTransparentBackground(false);
+      ec.exportFile(new File("output/zeroinfluencer.png"), pngExporter);
     } catch (IOException ex) {
       ex.printStackTrace();
       return;
