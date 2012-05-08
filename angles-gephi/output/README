@@ -1,0 +1,7 @@
+Gephi Toolkit renderer
+
+With java and ant installed, run:
+
+$ ant run
+
+A PNG file will be generated in the output directory.
