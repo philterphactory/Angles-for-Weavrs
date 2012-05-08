@@ -1,4 +1,4 @@
 .*.sw*
 .DS_Store
 build
-output
+output/*png
