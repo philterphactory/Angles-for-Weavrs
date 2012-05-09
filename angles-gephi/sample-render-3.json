@@ -1,0 +1,25 @@
+{
+  "input": "data/percival-keywords-dynamic-nodes-and-edges-2012-04.gexf",
+  "output": "output/percival-3.png",
+  "font": {
+     "name": "Hoefler Text",
+     "size": 15
+  },
+  "kcoreFilter": {
+    "k" : 12
+  },
+  "colour": {
+    "background": "1F4041",
+    "outline": "FAE6C5"
+  },
+  "opacity": {
+    "outline": 40,
+    "node": 50,
+    "edge": 10
+  },
+  "thickness": {
+    "edge": 10,
+    "outline": 2
+  },
+  "colourloversPalette": 131576
+}
