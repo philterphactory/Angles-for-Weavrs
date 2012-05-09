@@ -127,4 +127,18 @@ public class Config {
     }
     return 9;
   }
+
+  public int getWidth() throws ConfigException {
+    if(this.config.path("width").isInt()) {
+      return this.config.path("width").asInt();
+    }
+    return 768;
+  }
+
+  public int getHeight() throws ConfigException {
+    if(this.config.path("height").isInt()) {
+      return this.config.path("height").asInt();
+    }
+    return 768;
+  }
 }

@@ -135,8 +135,8 @@ public class YifanByDegreeRender implements Render {
     try {
       PNGExporter pngExporter = (PNGExporter) ec.getExporter("png");
       pngExporter.setWorkspace(workspace);
-      pngExporter.setWidth(1024);
-      pngExporter.setHeight(1024);
+      pngExporter.setWidth(this.config.getWidth());
+      pngExporter.setHeight(this.config.getHeight());
       pngExporter.setTransparentBackground(false);
       ec.exportFile(this.config.getOutputFile(), pngExporter);
     } catch (IOException ex) {

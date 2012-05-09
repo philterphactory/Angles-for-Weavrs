@@ -1,6 +1,8 @@
 {
   "input": "data/percival-keywords-dynamic-nodes-and-edges-2012-04.gexf",
   "output": "output/percival-3.png",
+  "width": 1024,
+  "height": 1024,
   "font": {
      "name": "Hoefler Text",
      "size": 15
