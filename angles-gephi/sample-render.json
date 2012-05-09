@@ -1,0 +1,21 @@
+{
+  "input": "data/percival-keywords-dynamic-nodes-and-edges-2012-04.gexf",
+  "output": "output/percival.png",
+  "font": {
+     "name": "Ostrich Sans",
+     "size": 18
+  },
+  "kcoreFilter": {
+    "k" : 12
+  },
+  "colour": {
+    "background": "ffffff",
+    "outline": "fdc8d1"
+  },
+  "opacity": {
+    "outline": 40,
+    "node": 50,
+    "edge": 10
+  },
+  "colourloversPalette": 629637
+}

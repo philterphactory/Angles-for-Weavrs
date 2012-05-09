@@ -24,16 +24,17 @@
   <target name="compile" depends="init"
     description="compile the source " >
     <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}" debug="yes" includeantruntime="false">
+    <javac srcdir="${src}" destdir="${build}" debug="yes" includeantruntime="false" deprecation="yes">
       <classpath refid="project.classpath" />
     </javac>
   </target>
 
   <target name="run" depends="compile">
-    <java classname="com.weavrs.gephi.RenderTrialrun">
+    <java classname="com.weavrs.gephi.Main" fork="yes">
       <classpath>
         <path refid="project.classpath" />
       </classpath>
+      <arg value="sample-render.json" />
     </java>
   </target>
 
