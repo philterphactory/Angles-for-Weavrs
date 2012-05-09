@@ -17,5 +17,9 @@
     "node": 50,
     "edge": 10
   },
+  "thickness": {
+    "edge": 10,
+    "outline": 1
+  },
   "colourloversPalette": 4182
 }

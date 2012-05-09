@@ -52,7 +52,7 @@ public class Config {
 
   public float getOpacity(String name) throws ConfigException {
     JsonNode opacity = this.config.path("opacity");
-    if(!opacity.isObject()) {
+    if(!opacity.isMissingNode() && !opacity.isObject()) {
       throw new ConfigException("opacity should be a hash.");
     }
     if(opacity.path(name).isNumber()) {
@@ -61,9 +61,22 @@ public class Config {
       return 100.0f;
     }
   }
+
+  public float getThickness(String name) throws ConfigException {
+    JsonNode thickness = this.config.path("thickness");
+    if(!thickness.isMissingNode() && !thickness.isObject()) {
+      throw new ConfigException("thickness should be a hash.");
+    }
+    if(thickness.path(name).isNumber()) {
+      return (float)thickness.path(name).asDouble();
+    } else {
+      return 1.0f;
+    }
+  }
+
   public Color getColour(String name) throws ConfigException {
     JsonNode colour = this.config.path("colour");
-    if(!colour.isObject()) {
+    if(!colour.isMissingNode() && !colour.isObject()) {
       throw new ConfigException("colour should be a hash.");
     }
     if(colour.path(name).isTextual()) {

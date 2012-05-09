@@ -105,22 +105,24 @@ public class Render {
     layout.setOptimalDistance(2000f);
     layout.setInitialStep(400f);
     layout.setStep(400f);
-    for (int i = 0; i < 500 && layout.canAlgo(); i++) {
+    int i = 0;
+    for (; i < 500 && layout.canAlgo(); i++) {
       layout.goAlgo();
     }
+    System.out.format("Yifan Hu layout iterated %d times.\n", i);
 
     // Preview properties
     model.getProperties().putValue(PreviewProperty.BACKGROUND_COLOR, this.config.getColour("background"));
 
     model.getProperties().putValue(PreviewProperty.EDGE_OPACITY, new Float(this.config.getOpacity("edge")));
-    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(10.0));
+    model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(this.config.getThickness("edge")));
 
     model.getProperties().putValue(PreviewProperty.SHOW_NODE_LABELS, Boolean.TRUE);
     model.getProperties().putValue(PreviewProperty.NODE_LABEL_COLOR, new DependantOriginalColor(DependantOriginalColor.Mode.PARENT));
     model.getProperties().putValue(PreviewProperty.NODE_LABEL_FONT, this.config.getFont());
     model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_COLOR, new DependantColor(this.config.getColour("outline")));
     model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_OPACITY, new Float(this.config.getOpacity("outline")));
-    model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_SIZE, new Float(5.0));
+    model.getProperties().putValue(PreviewProperty.NODE_LABEL_OUTLINE_SIZE, new Float(this.config.getThickness("outline")));
 
     model.getProperties().putValue(PreviewProperty.NODE_OPACITY, new Float(this.config.getOpacity("node")));
     
