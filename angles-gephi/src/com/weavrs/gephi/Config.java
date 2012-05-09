@@ -6,11 +6,20 @@ import java.net.*;
 import java.util.*;
 import java.awt.Font;
 import java.awt.Color;
+import net.spy.memcached.*;
 
 public class Config {
   JsonNode config;
-  public Config(JsonNode config) {
+
+  private static MemcachedClient memcached;
+
+  public Config(JsonNode config) throws IOException {
     this.config = config;
+    if(memcached == null) { 
+      memcached = new MemcachedClient( 
+        new ConnectionFactoryBuilder().setDaemon(true).build(), 
+        AddrUtil.getAddresses("localhost:11211"));
+    }
   }
 
   public File getInputFile() throws ConfigException {
@@ -88,7 +97,25 @@ public class Config {
 
   public JsonNode getColourloversPalette(int id) throws IOException {
     String url = String.format("http://www.colourlovers.com/api/palette/%d?showPaletteWidths=1&format=json", id);
-    return new ObjectMapper().readTree(new URL(url)).path(0);
+    System.out.println("URL: " + url);
+    JsonNode result;
+    ObjectMapper mapper = new ObjectMapper();
+
+    try {
+      Object cachedResponse = memcached.get(url);
+      if(cachedResponse == null) {
+        result = mapper.readTree(new URL(url));
+        memcached.set(url, 0, mapper.writeValueAsString(result));
+        //System.err.println("Caching miss.");
+      } else {
+        result = mapper.readTree(cachedResponse.toString());
+        //System.err.println("Caching hit.");
+      }
+      return result.path(0);
+    } catch(Exception e) {
+      //System.err.println("Caching failed.");
+      return mapper.readTree(new URL(url)).path(0);
+    }
   }
 
   public boolean hasColourloversPalette() {
