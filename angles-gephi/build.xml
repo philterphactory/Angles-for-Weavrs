@@ -30,7 +30,15 @@
   </target>
 
   <target name="run" depends="compile">
-    <java classname="com.weavrs.gephi.Render">
+    <java classname="com.weavrs.gephi.RenderTrialrun">
+      <classpath>
+        <path refid="project.classpath" />
+      </classpath>
+    </java>
+  </target>
+
+  <target name="trialrun" depends="compile">
+    <java classname="com.weavrs.gephi.RenderTrialrun">
       <classpath>
         <path refid="project.classpath" />
       </classpath>

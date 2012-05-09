@@ -54,7 +54,7 @@ import org.gephi.partition.plugin.NodeColorTransformer;
 import org.gephi.statistics.plugin.Modularity;
 import org.openide.util.Lookup;
 
-public class Render {
+public class RenderTrialrun {
   public static void main(String[] args) throws Exception {
     render_zeroinfluencer();
   }
