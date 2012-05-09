@@ -16,7 +16,8 @@ public class Main {
         } else {
           url = new URL(filename);
         }
-        Render render = new Render(mapper.readTree(url));
+        Render render = new YifanByDegreeRender();
+        render.setConfig(mapper.readTree(url));
         long started = System.currentTimeMillis();
         render.render();
         System.out.format("%s rendered in %dms.\n", filename, System.currentTimeMillis() - started);
