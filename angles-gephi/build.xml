@@ -34,7 +34,8 @@
       <classpath>
         <path refid="project.classpath" />
       </classpath>
-      <arg value="sample-render.json" />
+      <arg value="sample-render-1.json" />
+      <arg value="sample-render-2.json" />
     </java>
   </target>
 

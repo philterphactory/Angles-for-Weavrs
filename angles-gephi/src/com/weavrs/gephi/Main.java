@@ -17,7 +17,9 @@ public class Main {
           url = new URL(filename);
         }
         Render render = new Render(mapper.readTree(url));
+        long started = System.currentTimeMillis();
         render.render();
+        System.out.format("%s rendered in %dms.\n", filename, System.currentTimeMillis() - started);
       } catch(Exception e) {
         System.out.format("Exception processing %s:\n\n", filename);
         e.printStackTrace();
