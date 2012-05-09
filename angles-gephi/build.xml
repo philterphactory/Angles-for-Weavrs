@@ -36,6 +36,7 @@
       </classpath>
       <arg value="sample-render-1.json" />
       <arg value="sample-render-2.json" />
+      <arg value="sample-render-3.json" />
     </java>
   </target>
 
