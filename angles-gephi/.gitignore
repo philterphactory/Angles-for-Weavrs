@@ -2,4 +2,5 @@
 .DS_Store
 build
 output/*png
+cache/*.json
 tags
