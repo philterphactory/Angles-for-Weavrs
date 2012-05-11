@@ -8,6 +8,9 @@ media/static/version.txt
 .gaedata
 webapp/deploy_data.py
 
+*/media/static/version.txt
+*/webapp/deploy_data.py
+
 agency
 clique
 flickrapi
