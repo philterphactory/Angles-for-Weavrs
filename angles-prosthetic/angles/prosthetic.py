@@ -24,9 +24,7 @@
 #
 
 from base_prosthetic import Prosthetic
-import logging
-from random import choice
-from omnicritical import Omnicritical
+
 
 class Angles(Prosthetic):
     """Needs a docstring."""

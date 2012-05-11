@@ -24,7 +24,7 @@
 #
 
 from django.http import HttpResponse, HttpResponseNotFound
-from omnicritical import Omnicritical
+
 
 def test(request):
     """ Quick test to make sure content is coming back correctly. """
