@@ -1,3 +1,5 @@
+from __future__ import with_statement # Note this MUST go at the top of your views.py
+
 # Copyright (C) 2011 Philter Phactory Ltd.
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,9 +26,37 @@
 #
 
 from django.http import HttpResponse, HttpResponseNotFound
-
+from google.appengine.ext import blobstore
+from django import http
+from django.utils.http import http_date
+import time
 
 def test(request):
     """ Quick test to make sure content is coming back correctly. """
 
-    return HttpResponse('{"message":"seems to be working"}', mimetype="application/json")
+    return HttpResponse('{"message":"seems to be working and mattb can deploy"}', mimetype="application/json")
+
+# http://blainegarrett.com/2011/04/02/appengine-files-api-part-1-storingfetching-remote-images-in-blobstore-using-django/
+def blob(request, blob_key):
+  blob_info = blobstore.BlobInfo.get(blob_key)
+  if not blob_info:
+    raise Exception('Blob Key does not exist')
+
+  blob_file_size = blob_info.size
+  blob_content_type = blob_info.content_type
+
+  # Attempt to fetch the blob in one or more chunks depending on size and api limits
+  blob_concat = ""
+  start = 0
+  end = blobstore.MAX_BLOB_FETCH_SIZE - 1
+  step = blobstore.MAX_BLOB_FETCH_SIZE - 1
+
+  while(start < blob_file_size):
+    blob_concat += blobstore.fetch_data(blob_key, start, end)
+    temp_end = end
+    start = temp_end + 1
+    end = temp_end + step
+
+  response = http.HttpResponse(blob_concat, mimetype=blob_content_type)
+  response['Expires'] = http_date(time.time() + 24 * 60 * 60 * 365)
+  return response

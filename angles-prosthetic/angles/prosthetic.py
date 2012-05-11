@@ -1,3 +1,5 @@
+from __future__ import with_statement
+
 # Copyright (C) 2011 Philter Phactory Ltd.
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +25,49 @@
 # Phactory Ltd..
 #
 
+import logging
 from base_prosthetic import Prosthetic
 
+from google.appengine.api import files, urlfetch
 
 class Angles(Prosthetic):
-    """Needs a docstring."""
+  """Needs a docstring."""
 
-    def act(self, force=False):
+  @classmethod
+  def time_between_runs(cls):
+    # as often as possible
+    return 1
 
-        """ Do somthing here. """
+  def act(self, force=False):
+    logging.info("Angles acting.")
+    state = self.get("/1/weavr/state/")
+    logging.info("My name: %s" % state['weavr'])
 
-        return True
+    # This is disabled for now so that we don't fill up the blobstore every 10 minutes on live.
+    if False:
+      image_url = "http://www.hackdiary.com/misc/logo_120.gif"
+      fetch_response = urlfetch.fetch(image_url)
+
+      # Create a file
+      file_name = files.blobstore.create(mime_type='image/gif')
+
+      # Open the file and write to it
+      with files.open(file_name, 'a') as f:
+        f.write(fetch_response.content)
+
+      # Finalize the file. Do this before attempting to read it.
+      files.finalize(file_name)
+
+      # Get the file's blob key
+      blob_key = files.blobstore.get_blob_key(file_name)
+
+      logging.info("Created a blob called %s" % blob_key)
+
+      post = self.post("/1/weavr/post/", {
+        "category":"article",
+        "title":"Test post",
+        "body":"Here's an image from the blobstore that I copied from the internet: <img src=\"http://weavrs-angles.appspot.com/angles/blob/" + str(blob_key) + "/\" />",
+        "keywords":"testing"
+      })
+
+    return True

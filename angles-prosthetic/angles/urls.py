@@ -30,5 +30,6 @@ import views
 
 urlpatterns = patterns('',
     ( r"^test$", views.test ),
+    ( r"^blob/(.*?)/$", views.blob ),
 )
 
