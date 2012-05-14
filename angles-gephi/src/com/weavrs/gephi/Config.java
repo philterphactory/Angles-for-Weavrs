@@ -75,6 +75,15 @@ public class Config {
     }
   }
 
+  public boolean backgroundTransparent() throws ConfigException {
+    if(this.config.path("colour").path("background").isTextual() &&
+       this.config.path("colour").path("background").asText().toLowerCase().equals("transparent")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   public Color getColour(String name) throws ConfigException {
     JsonNode colour = this.config.path("colour");
     if(!colour.isMissingNode() && !colour.isObject()) {

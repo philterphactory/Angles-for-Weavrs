@@ -31,7 +31,7 @@ import com.fasterxml.jackson.databind.*;
 public class YifanByDegreeRender implements Render {
   private Config config;
 
-  public void setConfig(JsonNode config) {
+  public void setConfig(JsonNode config) throws IOException {
     this.config = new Config(config);
   }
 
@@ -116,7 +116,9 @@ public class YifanByDegreeRender implements Render {
     System.out.format("Yifan Hu layout iterated %d times.\n", i);
 
     // Preview properties
-    model.getProperties().putValue(PreviewProperty.BACKGROUND_COLOR, this.config.getColour("background"));
+    if(!this.config.backgroundTransparent()) {
+      model.getProperties().putValue(PreviewProperty.BACKGROUND_COLOR, this.config.getColour("background"));
+    }
 
     model.getProperties().putValue(PreviewProperty.EDGE_OPACITY, new Float(this.config.getOpacity("edge")));
     model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(this.config.getThickness("edge")));
@@ -137,7 +139,7 @@ public class YifanByDegreeRender implements Render {
       pngExporter.setWorkspace(workspace);
       pngExporter.setWidth(this.config.getWidth());
       pngExporter.setHeight(this.config.getHeight());
-      pngExporter.setTransparentBackground(false);
+      pngExporter.setTransparentBackground(this.config.backgroundTransparent());
       ec.exportFile(this.config.getOutputFile(), pngExporter);
     } catch (IOException ex) {
       ex.printStackTrace();

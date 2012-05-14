@@ -9,7 +9,7 @@
     "k" : 12
   },
   "colour": {
-    "background": "000000",
+    "background": "transparent",
     "outline": "cccccc"
   },
   "opacity": {
