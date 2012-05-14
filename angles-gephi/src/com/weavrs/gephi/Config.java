@@ -14,6 +14,14 @@ public class Config {
     this.config = config;
   }
 
+  public File getBackgroundImage() throws ConfigException {
+    if(this.config.path("backgroundImage").isValueNode()) {
+      return new File(this.config.path("backgroundImage").asText());
+    } else {
+      return null;
+    }
+  }
+
   public File getInputFile() throws ConfigException {
     if(this.config.path("input").isValueNode()) {
       return new File(this.config.path("input").asText());
@@ -76,6 +84,9 @@ public class Config {
   }
 
   public boolean backgroundTransparent() throws ConfigException {
+    if(this.config.path("backgroundImage").isValueNode()) { // override background setting if there's a background image
+      return true;
+    }
     if(this.config.path("colour").path("background").isTextual() &&
        this.config.path("colour").path("background").asText().toLowerCase().equals("transparent")) {
       return true;

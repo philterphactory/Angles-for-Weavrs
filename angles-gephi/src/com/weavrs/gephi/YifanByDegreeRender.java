@@ -1,5 +1,8 @@
 package com.weavrs.gephi;
 
+import javax.imageio.*;
+import java.awt.image.BufferedImage;
+import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.*;
@@ -138,7 +141,28 @@ public class YifanByDegreeRender implements Render {
       pngExporter.setWidth(this.config.getWidth());
       pngExporter.setHeight(this.config.getHeight());
       pngExporter.setTransparentBackground(this.config.backgroundTransparent());
-      ec.exportFile(this.config.getOutputFile(), pngExporter);
+      if(this.config.getBackgroundImage() == null) {
+        ec.exportFile(this.config.getOutputFile(), pngExporter);
+      } else {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ec.exportStream(baos, pngExporter);
+
+        BufferedImage image = ImageIO.read(this.config.getBackgroundImage());
+        BufferedImage graphImage = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+
+        // create the new image, canvas size is the max. of both image sizes
+        int w = Math.max(image.getWidth(), graphImage.getWidth());
+        int h = Math.max(image.getHeight(), graphImage.getHeight());
+        BufferedImage combined = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+
+        // paint both images, preserving the alpha channels
+        Graphics g = combined.getGraphics();
+        g.drawImage(image, 0, 0, null);
+        g.drawImage(graphImage, 0, 0, null);
+
+        // Save as new image
+        ImageIO.write(combined, "PNG", this.config.getOutputFile());
+      } 
     } catch (IOException ex) {
       ex.printStackTrace();
       return;
