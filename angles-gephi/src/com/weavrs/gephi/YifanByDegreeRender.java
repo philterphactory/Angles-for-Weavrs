@@ -59,8 +59,6 @@ public class YifanByDegreeRender implements Render {
 
     //See if graph is well imported
     Graph graph = graphModel.getGraph();
-    System.out.println("Nodes: " + graph.getNodeCount());
-    System.out.println("Edges: " + graph.getEdgeCount());
 
     // Filter graph by k-Core (default k=9)
     if(this.config.shouldFilterByKcore()) {
