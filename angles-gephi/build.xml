@@ -1,4 +1,7 @@
 <project name="hello" default="run" basedir=".">
+  <property name="one-jar.dist.dir" value="./one-jar" /> 
+  <import file="${one-jar.dist.dir}/one-jar-ant-task.xml" optional="true" /> 
+
   <description>
     simple build file
   </description>
@@ -51,10 +54,21 @@
   <target name="dist" depends="compile"
     description="generate the distribution" >
     <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
+    <mkdir dir="${dist}"/>
 
-    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${build}"/>
+    <one-jar destfile="${dist}/angles-gephi-${DSTAMP}.jar">
+      <manifest>
+        <attribute name="One-Jar-Main-Class" value="com.weavrs.gephi.Main"/>
+      </manifest>
+      <main>
+        <fileset dir="${build}"/>
+      </main>
+      <lib>
+        <fileset dir="lib">
+          <include name="**/*.jar"/>
+        </fileset>
+      </lib>
+    </one-jar>
   </target>
 
   <target name="clean"
