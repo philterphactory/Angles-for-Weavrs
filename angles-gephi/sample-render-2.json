@@ -1,8 +1,8 @@
 {
-  "input": "data/percival-keywords-dynamic-nodes-and-edges-2012-04.gexf",
+  "input": "data/percival-keywords-one-week.gexf",
   "output": "output/percival-2.png",
   "kcoreFilter": {
-    "k" : 12
+    "k" : 9
   },
   "colour": {
     "background": "fdedef",
