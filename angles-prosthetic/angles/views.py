@@ -29,6 +29,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import get_object_or_404
 from webapp.models import AccessToken
 from google.appengine.ext import blobstore
+from google.appengine.runtime import DeadlineExceededError
 from django import http
 from django.utils.http import http_date
 import time
