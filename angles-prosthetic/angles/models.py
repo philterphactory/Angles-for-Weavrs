@@ -23,11 +23,49 @@
 # Phactory Ltd..
 #
 
-import logging
+
 from django.db import models
-import datetime
-import time
 try: from django.utils import simplejson as json
 except ImportError: import json
 
 from webapp.models import AccessToken
+
+
+class AnglesRun(models.Model):
+    # the weavr we're associated with
+    weavr_token = models.ForeignKey(AccessToken)
+
+    # when was this created / requested?
+    created = models.DateTimeField(auto_now=True, auto_now_add=True, null=False)
+
+    # when was this whistle completed. null means 'not yet'
+    completed = models.DateTimeField(null=True)
+
+    # where is the content uploaded to
+    source_url = models.CharField(max_length=255,null=True,blank=True)
+
+    title = models.CharField(max_length=255, blank=False)
+    description = models.CharField(max_length=255, blank=False)
+    keywords = models.CharField(max_length=255, blank=False)
+
+    post_id = models.CharField(max_length=255, blank=False)
+
+
+    success  = models.NullBooleanField(null=True) # null whencreated
+
+    # details about the reason for the failure to render/upload or post
+    error_record = models.CharField(max_length=255, null=True)
+
+    bot_name = models.CharField(max_length=255, blank=False)
+
+class AnglesConfig(models.Model):
+
+    server_password = models.CharField(max_length=255, blank=False, help_text="shared password with the whistler server")
+    instance_name = models.CharField(max_length=255, blank=False, help_text="the name of the instance", default="weavrs-angles")
+    title = models.CharField(max_length=255, blank=False, help_text="Title for the WP posts, gets appended the keywords used")
+
+def config():
+    try:
+        return AnglesConfig.objects.all()[0]
+    except IndexError:
+        raise Exception("No Config object defined")

@@ -1,0 +1,13 @@
+poller_base
+
+intended as a set of useful base classes for writing mediasynth prosthetics. The point is to abstract out some common functionality so we're not reinventing the wheel all the time. This is a work in progress - not all the mediasynths are converted yet.
+
+there are 2 main base classes so far:
+
+## Poller
+
+Generic poller class. Reads a local server_settings.py file, handles the polling runloop, calls self.render(server, rundata) per item. See alice-daemon for an example of this.
+
+## SlideSharePoller
+
+Specialist poller that abstracts everything you need to upload things to slideshare, because we have 2 of these already and I understand that the plan is to have more. See sloganeer-daemon for an example.
