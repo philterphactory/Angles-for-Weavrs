@@ -26,8 +26,11 @@ from __future__ import with_statement
 #
 
 import logging
+import views
 from base_prosthetic import Prosthetic
 
+from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 from google.appengine.api import files, urlfetch
 
 class Angles(Prosthetic):
@@ -37,6 +40,9 @@ class Angles(Prosthetic):
   def time_between_runs(cls):
     # as often as possible
     return 1
+
+  def post_oauth_callback(self):
+    return redirect(reverse(views.config, args=[self.token.oauth_key]))
 
   def act(self, force=False):
     logging.info("Angles acting.")

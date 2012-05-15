@@ -76,7 +76,7 @@ DEBUG = False
 LOCAL_SERVER = "%s.appspot.com" % INSTANCE_NAME
 
 if APPENGINE_DEV:
-    LOCAL_SERVER = "localhost:8001"
+    LOCAL_SERVER = "localhost:8080"
     DEBUG=True
     MIDDLEWARE_CLASSES += ('errormon.middleware.IdeDebugMiddleware',)
 

@@ -25,7 +25,9 @@ from __future__ import with_statement # Note this MUST go at the top of your vie
 # Phactory Ltd..
 #
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import get_object_or_404
+from webapp.models import AccessToken
 from google.appengine.ext import blobstore
 from django import http
 from django.utils.http import http_date
@@ -33,9 +35,14 @@ import time
 import models
 
 def test(request):
-    """ Quick test to make sure content is coming back correctly. """
+  """ Quick test to make sure content is coming back correctly. """
 
-    return HttpResponse('{"message":"seems to be working and mattb can deploy"}', mimetype="application/json")
+  return HttpResponse('{"message":"seems to be working and mattb can deploy"}', mimetype="application/json")
+
+def config(request, weavr_token):
+  token = get_object_or_404(AccessToken, oauth_key=weavr_token)    
+  
+  return HttpResponse('{"correctly_installed_for_weavr":"' + str(token.weavr_url) + '"}', mimetype="application/json")
 
 # http://blainegarrett.com/2011/04/02/appengine-files-api-part-1-storingfetching-remote-images-in-blobstore-using-django/
 def blob(request, blob_key):

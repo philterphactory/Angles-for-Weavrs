@@ -1,5 +1,8 @@
 package com.weavrs.gephi;
 
+import javax.imageio.*;
+import java.awt.image.BufferedImage;
+import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.*;
@@ -31,7 +34,7 @@ import com.fasterxml.jackson.databind.*;
 public class YifanByDegreeRender implements Render {
   private Config config;
 
-  public void setConfig(JsonNode config) {
+  public void setConfig(JsonNode config) throws IOException {
     this.config = new Config(config);
   }
 
@@ -59,8 +62,6 @@ public class YifanByDegreeRender implements Render {
 
     //See if graph is well imported
     Graph graph = graphModel.getGraph();
-    System.out.println("Nodes: " + graph.getNodeCount());
-    System.out.println("Edges: " + graph.getEdgeCount());
 
     // Filter graph by k-Core (default k=9)
     if(this.config.shouldFilterByKcore()) {
@@ -116,7 +117,9 @@ public class YifanByDegreeRender implements Render {
     System.out.format("Yifan Hu layout iterated %d times.\n", i);
 
     // Preview properties
-    model.getProperties().putValue(PreviewProperty.BACKGROUND_COLOR, this.config.getColour("background"));
+    if(!this.config.backgroundTransparent()) {
+      model.getProperties().putValue(PreviewProperty.BACKGROUND_COLOR, this.config.getColour("background"));
+    }
 
     model.getProperties().putValue(PreviewProperty.EDGE_OPACITY, new Float(this.config.getOpacity("edge")));
     model.getProperties().putValue(PreviewProperty.EDGE_THICKNESS, new Float(this.config.getThickness("edge")));
@@ -137,8 +140,29 @@ public class YifanByDegreeRender implements Render {
       pngExporter.setWorkspace(workspace);
       pngExporter.setWidth(this.config.getWidth());
       pngExporter.setHeight(this.config.getHeight());
-      pngExporter.setTransparentBackground(false);
-      ec.exportFile(this.config.getOutputFile(), pngExporter);
+      pngExporter.setTransparentBackground(this.config.backgroundTransparent());
+      if(this.config.getBackgroundImage() == null) {
+        ec.exportFile(this.config.getOutputFile(), pngExporter);
+      } else {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ec.exportStream(baos, pngExporter);
+
+        BufferedImage image = ImageIO.read(this.config.getBackgroundImage());
+        BufferedImage graphImage = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+
+        // create the new image, canvas size is the max. of both image sizes
+        int w = Math.max(image.getWidth(), graphImage.getWidth());
+        int h = Math.max(image.getHeight(), graphImage.getHeight());
+        BufferedImage combined = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+
+        // paint both images, preserving the alpha channels
+        Graphics g = combined.getGraphics();
+        g.drawImage(image, 0, 0, null);
+        g.drawImage(graphImage, 0, 0, null);
+
+        // Save as new image
+        ImageIO.write(combined, "PNG", this.config.getOutputFile());
+      } 
     } catch (IOException ex) {
       ex.printStackTrace();
       return;

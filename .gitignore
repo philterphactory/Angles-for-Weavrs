@@ -10,7 +10,7 @@ webapp/deploy_data.py
 
 */media/static/version.txt
 */webapp/deploy_data.py
-
+*.class
 agency
 clique
 flickrapi

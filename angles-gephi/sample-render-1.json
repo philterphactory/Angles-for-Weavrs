@@ -1,15 +1,16 @@
 {
-  "input": "data/percival-keywords-dynamic-nodes-and-edges-2012-04.gexf",
+  "input": "data/percival-keywords-one-week.gexf",
   "output": "output/percival-1.png",
+  "backgroundImage": "data/streetview.png",
   "font": {
      "name": "Ostrich Sans",
      "size": 18
   },
   "kcoreFilter": {
-    "k" : 12
+    "k" : 9
   },
   "colour": {
-    "background": "000000",
+    "background": "transparent",
     "outline": "cccccc"
   },
   "opacity": {

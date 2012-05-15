@@ -31,5 +31,6 @@ import views
 urlpatterns = patterns('',
     ( r"^test$", views.test ),
     ( r"^blob/(.*?)/$", views.blob ),
+    ( r"^config/(.*?)/$", views.config ),
 )
 
