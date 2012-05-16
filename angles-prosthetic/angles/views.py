@@ -32,8 +32,13 @@ from google.appengine.ext import blobstore
 from google.appengine.runtime import DeadlineExceededError
 from django import http
 from django.utils.http import http_date
-import time
+import traceback
+import time, datetime
 import models
+import logging
+try: from django.utils import simplejson as json
+except ImportError: import json
+from webapp.client import OAuthForbiddenException, OAuthUnauthorizedException
 
 def test(request):
   """ Quick test to make sure content is coming back correctly. """
@@ -83,9 +88,13 @@ def pending(request):
     if response: return response
 
     # generate the output
-    output = ""
+    output = json.dumps([{ 
+        "instance_name" : "x",
+        "run_id" : x.id,
+        "data" : x.weavr_token.data
+        } for x in models.AnglesRun.objects.filter(completed__isnull=True)])
 
-    return HttpResponse(output, content_type="text/plain")
+    return HttpResponse(output, content_type="application/json")
 
 def complete(request):
     """ called from poller on sucessful run."""
@@ -95,25 +104,34 @@ def complete(request):
 
     run_id = request.POST.get("run_id")
 
-    run = get_object_or_404(AnglesRun, id=run_id)
+    run = get_object_or_404(models.AnglesRun, id=run_id)
 
     try :
+        run.completed = datetime.datetime.utcnow()
         post = run.weavr_token.post("/1/weavr/post/", {
             "category":"article",
-            "user_name": "user_name",
-            "user_url": "user_url",
-            "title":"title",
+            "title": request.POST.get("message"),
             "keywords": "keywords",
             "body" : "body",
         })
-        run.completed = datetime.datetime.utcnow()
         run.post_id = post["post_id"]
         run.success = True
         run.error_record = None
         run.save()
+    except OAuthForbiddenException, e :
+        logging.info( '%s error posting to weavr' % e)
+        logging.info( traceback.format_exc() )
+
+        run.success = False
+        run.error_record = '%s error posting to weavr' % e
+        run.save()
     except OAuthUnauthorizedException, e :
         logging.info( '%s error posting to weavr' % e)
         logging.info( traceback.format_exc() )
+        
+        run.success = False
+        run.error_record = '%s error posting to weavr' % e
+        run.save()
     except DeadlineExceededError, e :
         logging.warning( '%s error posting to weavr' % e)
         logging.warning( traceback.format_exc() )
@@ -129,13 +147,13 @@ def failed(request) :
 
     logging.warning('Run %s FAILED . %s' % (run_id, error_record))
 
-    run = get_object_or_404(AnglesRun, id=run_id)
+    run = get_object_or_404(models.AnglesRun, id=run_id)
     run.completed = datetime.datetime.utcnow()
     run.success = False
     run.error_record = error_record
     run.save()
 
-    output = json.dumps({ "post_id":run_id }, indent = 4)
+    output = json.dumps({ "run_id":run_id }, indent = 4)
     return HttpResponse(output, content_type="text/plain")
 
 def basic_challenge():

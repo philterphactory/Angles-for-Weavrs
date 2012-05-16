@@ -30,8 +30,9 @@ import views
 
 urlpatterns = patterns('',
     ( r"^test$", views.test ),
-    ( r"^pending$", views.pending ),
-    ( r"^complete$", views.complete ),
+    ( r"^pending/$", views.pending ),
+    ( r"^complete/$", views.complete ),
+    ( r"^failed/$", views.failed ),
     ( r"^blob/(.*?)/$", views.blob ),
     ( r"^config/(.*?)/$", views.config ),
 )

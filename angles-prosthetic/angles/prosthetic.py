@@ -27,11 +27,12 @@ from __future__ import with_statement
 
 import logging
 import views
-from base_prosthetic import Prosthetic
+from base_prosthetic import Prosthetic, persist_state
 
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 from google.appengine.api import files, urlfetch
+from angles import models
 
 class Angles(Prosthetic):
   """Needs a docstring."""
@@ -44,10 +45,11 @@ class Angles(Prosthetic):
   def post_oauth_callback(self):
     return redirect(reverse(views.config, args=[self.token.oauth_key]))
 
+  @persist_state
   def act(self, force=False):
     logging.info("Angles acting.")
-    state = self.get("/1/weavr/state/")
-    logging.info("My name: %s" % state['weavr'])
+    data = self.get("/1/weavr/state/")
+    logging.info("My name: %s" % data['weavr'])
 
     # This is disabled for now so that we don't fill up the blobstore every 10 minutes on live.
     if False:
@@ -76,4 +78,7 @@ class Angles(Prosthetic):
         "keywords":"testing"
       })
 
+    self.state = { "name" : data['weavr'] }
+    run = models.AnglesRun(weavr_token = self.token)
+    run.save()
     return True

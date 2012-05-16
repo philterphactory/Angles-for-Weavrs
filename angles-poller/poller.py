@@ -29,6 +29,8 @@ import traceback
 import logging
 import urllib2
 from poller_base import Poller
+try: from django.utils import simplejson as json
+except ImportError: import json
 
 class AnglesPoller(Poller):
     
@@ -37,7 +39,7 @@ class AnglesPoller(Poller):
 
     def render(self, server, run):
 
-        id = 123
+        id = run['run_id']
 
         try:
             return self.safe_render(server, run)
@@ -66,8 +68,10 @@ class AnglesPoller(Poller):
 
 
         try :
-
-            print "Do something clever"
+            data = json.loads(run['data'])
+            print "Do something clever for:"
+            print data['name']
+            permalink_url = "http://www.example.com/"
 
         except urllib2.HTTPError, e :
             # soundcloud error codes #
@@ -86,9 +90,11 @@ class AnglesPoller(Poller):
         if not permalink_url:
             raise Exception("no permalink url")
 
+        id = run['run_id']
         data = {
             "run_id": id,
             "success": True,
+            "message": "I did something clever."
         }
         print "posting %s"%data
         response = self.auth_call(server, "/angles/complete/", data)
