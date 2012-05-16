@@ -1,6 +1,7 @@
 app.yaml
 app.yaml.local
 media/static/version.txt
+angles-poller/cache/*json
 
 *.pyc
 *~
