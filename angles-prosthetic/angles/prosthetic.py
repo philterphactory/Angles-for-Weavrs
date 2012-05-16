@@ -27,12 +27,25 @@ from __future__ import with_statement
 
 import logging
 import views
+import datetime
 from base_prosthetic import Prosthetic, persist_state
 
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 from google.appengine.api import files, urlfetch
 from angles import models
+
+one_week = datetime.timedelta(7)
+
+def all_pairs(seq):
+    l = len(seq)
+    for i in range(l):
+        for j in range(i+1, l):
+            yield seq[i], seq[j]
+
+def format_datetime(dt):
+    """Format the datetime object to a string in Weavrs format"""
+    return dt.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 class Angles(Prosthetic):
   """Needs a docstring."""
@@ -78,7 +91,74 @@ class Angles(Prosthetic):
         "keywords":"testing"
       })
 
-    self.state = { "name" : data['weavr'] }
+    self.state = {
+        'gexf': self.load_gexf(),
+        'job':"""
+{
+  "input": "to-be-replaced",
+  "output": "to-be-replaced",
+  "font": {
+     "name": "Ostrich Sans",
+     "size": 18
+  },
+  "kcoreFilter": {
+    "k" : 9
+  },
+  "colour": {
+    "background": "000000",
+    "outline": "cccccc"
+  },
+  "opacity": {
+    "outline": 40,
+    "node": 50,
+    "edge": 10
+  },
+  "thickness": {
+    "edge": 10,
+    "outline": 1
+  },
+  "colourloversPalette": 4182
+}
+"""
+    }
+
     run = models.AnglesRun(weavr_token = self.token)
     run.save()
     return True
+
+  def load_gexf(self):
+    run = self.token.get_json("/1/weavr/post", {
+      'before':format_datetime(datetime.datetime.now()),
+      'after':format_datetime(datetime.datetime.now() - one_week),
+      'per_page':1000
+    })
+    node_names = set()
+    edges = dict()
+    for post in run['posts']:
+        keywords = list(set(post['keywords'].split()))
+        node_names.update(keywords)
+        for pair in all_pairs(keywords):
+            # Make sure a/b and b/a are counted the same
+            edge = tuple(sorted(pair))
+            edges[edge] = edges.get(edge, 0) + 1
+    nodes = list(node_names)
+
+    # xml dump
+    gexf = u''
+    gexf += u'<?xml version="1.0" encoding="UTF-8"?>'
+    gexf += u'<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2">'
+    gexf += u'<graph mode="static" defaultedgetype="undirected">'
+    gexf += u'<nodes>'
+    for node in nodes:
+        gexf += u'<node id="%s" label="%s" />' % (node, node)
+    gexf += u'</nodes>'
+    gexf += u'<edges>'
+    edge_id = 0
+    for edge, weight in edges.iteritems():
+        gexf += u'<edge id="%i" source="%s" target="%s" weight="%f" />'\
+            % (edge_id, edge[0], edge[1], weight)
+        edge_id += 1
+    gexf += u'</edges>'
+    gexf += u'</graph>'
+    gexf += u'</gexf>'
+    return gexf

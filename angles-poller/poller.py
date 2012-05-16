@@ -68,15 +68,26 @@ class AnglesPoller(Poller):
             instance_name = 'weavrs-angles' # default
 
         data = json.loads(run['data'])
-        print "Making a PNG for %s" % data['name']
-        os.system("java -jar angles-gephi-20120514.jar test-render.json")
 
         id = run['run_id']
+
+        print "Making a PNG for run %d" % id
+        gexf = open("/tmp/render.gexf","w")
+        gexf.write(data['gexf'])
+        gexf.close()
+        job_json = json.loads(data['job'])
+        job_json['input'] = '/tmp/render.gexf'
+        job_json['output'] = '/tmp/render.png'
+        job = open("/tmp/render.json","w")
+        job.write(json.dumps(job_json))
+        job.close()
+        os.system("java -jar angles-gephi.jar /tmp/render.json")
+
         data = {
             "run_id": id,
             "success": True,
-            "message": "I made you a png.",
-            "image1": open("output.png","rb")
+            "message": "Keyword interactions for this week."
+            "image1": open("/tmp/render.png","rb")
         }
         print "posting %s"%data
         response = self.auth_call_with_files(server, "/angles/complete/", data)
