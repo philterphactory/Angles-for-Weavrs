@@ -28,6 +28,7 @@ from __future__ import with_statement # Note this MUST go at the top of your vie
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import get_object_or_404
 from webapp.models import AccessToken
+from google.appengine.api import files, urlfetch
 from google.appengine.ext import blobstore
 from google.appengine.runtime import DeadlineExceededError
 from django import http
@@ -96,6 +97,9 @@ def pending(request):
 
     return HttpResponse(output, content_type="application/json")
 
+    
+    return HttpResponse(blob_key, content_type="text/plain")
+
 def complete(request):
     """ called from poller on sucessful run."""
     config = models.config()
@@ -108,13 +112,25 @@ def complete(request):
 
     try :
         run.completed = datetime.datetime.utcnow()
-        post = run.weavr_token.post("/1/weavr/post/", {
-            "category":"article",
-            "title": request.POST.get("message"),
-            "keywords": "keywords",
-            "body" : "body",
-        })
-        run.post_id = post["post_id"]
+
+        # make a post per uploaded file
+        for key,infile in request.FILES.items():
+            file_name = files.blobstore.create(mime_type='image/png')
+            with files.open(file_name, 'a') as f:
+              f.write(infile.read())
+            files.finalize(file_name)
+            blob_key = files.blobstore.get_blob_key(file_name)
+            logging.info("Uploaded a file to blob_key %s" % blob_key)
+
+            logging.info("Making a blog post on %s" % run.weavr_token.weavr_url)
+            post = run.weavr_token.post("/1/weavr/post/", {
+                "category":"article",
+                "title": request.POST.get("message"),
+                "keywords": "Angles",
+                "body" : "<img src='http://weavrs-angles.appspot.com/angles/blob/%s/'>" % blob_key
+            })
+            run.post_id = post["post_id"]
+
         run.success = True
         run.error_record = None
         run.save()

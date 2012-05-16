@@ -44,6 +44,10 @@ logging.Logger.setLevel( logging.getLogger(), logging.INFO )
 # * render them
 # * post to server when done
 
+from poster.encode import multipart_encode
+from poster.streaminghttp import register_openers
+register_openers()
+
 import urllib, urllib2
 try: import simplejson as json
 except ImportError: import json
@@ -62,7 +66,7 @@ except ImportError:
         # or you can set them here 
         logging.warn("Can't find server_settings.py at all - assuming development mode")
         PTK_SERVER="localhost:8000"
-        PTK_PASSWORD="devdevdev" # MUST match value in Config object on ptk server
+        PTK_PASSWORD="helloworld" # MUST match value in Config object on ptk server
 
     PTK_SERVERS = [ [ PTK_SERVER, PTK_PASSWORD ] ]
     POLL_TIME = 10
@@ -110,6 +114,18 @@ class Poller(object):
             if isinstance(data, dict):
                 data = urllib.urlencode(data)
             req = urllib2.Request("%s://%s%s"%(server.protocol, server.host, path), data)
+            base64string = base64.encodestring('%s:%s'%("user", server.password))[:-1]
+            req.add_header("Authorization", "Basic %s"%base64string)
+            response = urllib2.urlopen(req)
+            return response.read()
+        except urllib2.HTTPError, e:
+            logging.error("Can't call %s on %s: %s"%(path, server, e))
+            return None
+
+    def auth_call_with_files(self, server, path, data=None):
+        try:
+            datagen, headers = multipart_encode(data)
+            req = urllib2.Request("%s://%s%s"%(server.protocol, server.host, path), datagen, headers)
             base64string = base64.encodestring('%s:%s'%("user", server.password))[:-1]
             req.add_header("Authorization", "Basic %s"%base64string)
             response = urllib2.urlopen(req)

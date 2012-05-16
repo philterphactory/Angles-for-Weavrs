@@ -94,10 +94,11 @@ class AnglesPoller(Poller):
         data = {
             "run_id": id,
             "success": True,
-            "message": "I did something clever."
+            "message": "I did something clever.",
+            "image1": open("testimage.jpg","rb")
         }
         print "posting %s"%data
-        response = self.auth_call(server, "/angles/complete/", data)
+        response = self.auth_call_with_files(server, "/angles/complete/", data)
         return True
 
 
