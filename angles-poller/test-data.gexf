@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2">
+<graph mode="static" defaultedgetype="undirected">
+<nodes>
+<node id="saying" label="saying" />
+<node id="kettle" label="kettle" />
+<node id="just" label="just" />
+<node id="dance" label="dance" />
+<node id="fume" label="fume" />
+<node id="able" label="able" />
+<node id="years" label="years" />
+<node id="sleep" label="sleep" />
+<node id="love" label="love" />
+<node id="alternative" label="alternative" />
+<node id="zoo" label="zoo" />
+<node id="hate" label="hate" />
+<node id="stinks" label="stinks" />
+<node id="cup" label="cup" />
+<node id="lady" label="lady" />
+<node id="amazing" label="amazing" />
+<node id="day" label="day" />
+<node id="late" label="late" />
+<node id="going" label="going" />
+<node id="piano" label="piano" />
+<node id="930" label="930" />
+<node id="2011" label="2011" />
+<node id="woman" label="woman" />
+<node id="crash" label="crash" />
+<node id="worse" label="worse" />
+<node id="listened" label="listened" />
+<node id="fav" label="fav" />
+<node id="fat" label="fat" />
+<node id="early" label="early" />
+<node id="feels" label="feels" />
+<node id="michel-telo" label="michel-telo" />
+<node id="nearly" label="nearly" />
+<node id="singer-songwriter" label="singer-songwriter" />
+<node id="crisp" label="crisp" />
+<node id="bit" label="bit" />
+<node id="month" label="month" />
+<node id="twilight" label="twilight" />
+<node id="sorts" label="sorts" />
+<node id="airports" label="airports" />
+<node id="like" label="like" />
+<node id="didn" label="didn" />
+<node id="accidentally" label="accidentally" />
+<node id="shouldnt" label="shouldnt" />
+<node id="morning" label="morning" />
+<node id="bag" label="bag" />
+<node id="female-vocalist" label="female-vocalist" />
+<node id="rock" label="rock" />
+<node id="acoustic" label="acoustic" />
+<node id="havent" label="havent" />
+<node id="inside" label="inside" />
+<node id="set" label="set" />
+<node id="old" label="old" />
+<node id="classical" label="classical" />
+<node id="fucking" label="fucking" />
+<node id="house" label="house" />
+<node id="testing" label="testing" />
+<node id="hasn" label="hasn" />
+<node id="sex" label="sex" />
+<node id="latin" label="latin" />
+<node id="home" label="home" />
+<node id="tempted" label="tempted" />
+<node id="folk" label="folk" />
+<node id="toffees" label="toffees" />
+<node id="happens" label="happens" />
+<node id="esp" label="esp" />
+<node id="open" label="open" />
+<node id="singapore" label="singapore" />
+<node id="microwave" label="microwave" />
+<node id="seriously" label="seriously" />
+<node id="penguins" label="penguins" />
+<node id="got" label="got" />
+<node id="hard-rock" label="hard-rock" />
+<node id="epic" label="epic" />
+<node id="pepper" label="pepper" />
+<node id="noise" label="noise" />
+<node id="power" label="power" />
+<node id="lady-gaga" label="lady-gaga" />
+<node id="free" label="free" />
+<node id="let" label="let" />
+<node id="wear" label="wear" />
+<node id="wtf" label="wtf" />
+<node id="post" label="post" />
+<node id="wanted" label="wanted" />
+<node id="care" label="care" />
+<node id="sister" label="sister" />
+<node id="ate" label="ate" />
+<node id="brilliant" label="brilliant" />
+<node id="taking" label="taking" />
+<node id="british" label="british" />
+<node id="turn" label="turn" />
+<node id="american" label="american" />
+<node id="massive" label="massive" />
+<node id="smoke" label="smoke" />
+<node id="cookie" label="cookie" />
+<node id="road" label="road" />
+<node id="feed" label="feed" />
+<node id="beautiful" label="beautiful" />
+<node id="managers" label="managers" />
+<node id="stansted" label="stansted" />
+<node id="point" label="point" />
+<node id="pop" label="pop" />
+<node id="ppl" label="ppl" />
+<node id="nothealthybreakfast" label="nothealthybreakfast" />
+<node id="pointless" label="pointless" />
+<node id="tomorrow" label="tomorrow" />
+<node id="little" label="little" />
+<node id="toy" label="toy" />
+<node id="yiruma" label="yiruma" />
+<node id="catchy" label="catchy" />
+<node id="kinder" label="kinder" />
+<node id="kitchen" label="kitchen" />
+<node id="does" label="does" />
+<node id="yes" label="yes" />
+<node id="seether" label="seether" />
+<node id="gluten" label="gluten" />
+<node id="justcauseimgoingaway" label="justcauseimgoingaway" />
+<node id="godsake" label="godsake" />
+<node id="offered" label="offered" />
+<node id="took" label="took" />
+<node id="chocolate" label="chocolate" />
+<node id="instrumental" label="instrumental" />
+<node id="phone" label="phone" />
+<node id="binned" label="binned" />
+<node id="wake" label="wake" />
+<node id="broke" label="broke" />
+<node id="polarbears" label="polarbears" />
+<node id="eat" label="eat" />
+<node id="wide" label="wide" />
+<node id="places" label="places" />
+<node id="wait" label="wait" />
+<node id="whatawaste" label="whatawaste" />
+<node id="mcfly" label="mcfly" />
+<node id="strangest" label="strangest" />
+<node id="today" label="today" />
+<node id="hahaha" label="hahaha" />
+<node id="making" label="making" />
+<node id="remembering" label="remembering" />
+<node id="coconut" label="coconut" />
+<node id="giraffes" label="giraffes" />
+<node id="indie" label="indie" />
+<node id="alternative-rock" label="alternative-rock" />
+<node id="bourbons" label="bourbons" />
+<node id="middle" label="middle" />
+<node id="hug" label="hug" />
+<node id="female-vocals" label="female-vocals" />
+<node id="want" label="want" />
+<node id="runway" label="runway" />
+<node id="trip" label="trip" />
+<node id="shit" label="shit" />
+<node id="car" label="car" />
+<node id="britpop" label="britpop" />
+<node id="make" label="make" />
+<node id="cashew" label="cashew" />
+<node id="nuts" label="nuts" />
+<node id="couch" label="couch" />
+<node id="hot" label="hot" />
+<node id="build" label="build" />
+<node id="sick" label="sick" />
+<node id="sat" label="sat" />
+<node id="tapir" label="tapir" />
+<node id="nice" label="nice" />
+<node id="walkers" label="walkers" />
+<node id="sure" label="sure" />
+<node id="unless" label="unless" />
+<node id="indie-rock" label="indie-rock" />
+<node id="eggs" label="eggs" />
+<node id="5mins" label="5mins" />
+<node id="gonna" label="gonna" />
+<node id="decorated" label="decorated" />
+<node id="manchester" label="manchester" />
+<node id="bar" label="bar" />
+<node id="younger" label="younger" />
+<node id="drive" label="drive" />
+<node id="double" label="double" />
+<node id="macaroon" label="macaroon" />
+<node id="jungle" label="jungle" />
+<node id="time" label="time" />
+<node id="great" label="great" />
+<node id="songs" label="songs" />
+</nodes>
+<edges>
+<edge id="0" source="sister" target="today" weight="2.000000" />
+<edge id="1" source="cashew" target="crisp" weight="3.000000" />
+<edge id="2" source="happens" target="macaroon" weight="4.000000" />
+<edge id="3" source="airports" target="like" weight="4.000000" />
+<edge id="4" source="airports" target="bag" weight="3.000000" />
+<edge id="5" source="chocolate" target="kitchen" weight="6.000000" />
+<edge id="6" source="cup" target="hot" weight="3.000000" />
+<edge id="7" source="cookie" target="stinks" weight="3.000000" />
+<edge id="8" source="does" target="fucking" weight="3.000000" />
+<edge id="9" source="little" target="toy" weight="3.000000" />
+<edge id="10" source="great" target="nothealthybreakfast" weight="3.000000" />
+<edge id="11" source="microwave" target="set" weight="4.000000" />
+<edge id="12" source="cashew" target="years" weight="3.000000" />
+<edge id="13" source="drive" target="manchester" weight="3.000000" />
+<edge id="14" source="accidentally" target="kitchen" weight="6.000000" />
+<edge id="15" source="care" target="didn" weight="4.000000" />
+<edge id="16" source="didn" target="inside" weight="4.000000" />
+<edge id="17" source="airports" target="hate" weight="4.000000" />
+<edge id="18" source="coconut" target="nice" weight="3.000000" />
+<edge id="19" source="cashew" target="nuts" weight="3.000000" />
+<edge id="20" source="airports" target="morning" weight="3.000000" />
+<edge id="21" source="crisp" target="walkers" weight="3.000000" />
+<edge id="22" source="just" target="massive" weight="7.000000" />
+<edge id="23" source="havent" target="songs" weight="9.000000" />
+<edge id="24" source="able" target="took" weight="4.000000" />
+<edge id="25" source="like" target="ppl" weight="4.000000" />
+<edge id="26" source="middle" target="sick" weight="3.000000" />
+<edge id="27" source="little" target="younger" weight="3.000000" />
+<edge id="28" source="fucking" target="just" weight="3.000000" />
+<edge id="29" source="just" target="lady" weight="3.000000" />
+<edge id="30" source="pepper" target="polarbears" weight="7.000000" />
+<edge id="31" source="cookie" target="microwave" weight="3.000000" />
+<edge id="32" source="broke" target="nearly" weight="6.000000" />
+<edge id="33" source="airports" target="trip" weight="4.000000" />
+<edge id="34" source="airports" target="just" weight="9.000000" />
+<edge id="35" source="just" target="listened" weight="7.000000" />
+<edge id="36" source="britpop" target="rock" weight="1.000000" />
+<edge id="37" source="didn" target="little" weight="3.000000" />
+<edge id="38" source="eggs" target="just" weight="4.000000" />
+<edge id="39" source="chocolate" target="stinks" weight="3.000000" />
+<edge id="40" source="chocolate" target="sat" weight="4.000000" />
+<edge id="41" source="stansted" target="trip" weight="3.000000" />
+<edge id="42" source="folk" target="singer-songwriter" weight="1.000000" />
+<edge id="43" source="offered" target="years" weight="3.000000" />
+<edge id="44" source="noise" target="want" weight="3.000000" />
+<edge id="45" source="care" target="younger" weight="3.000000" />
+<edge id="46" source="just" target="smoke" weight="3.000000" />
+<edge id="47" source="mcfly" target="rock" weight="1.000000" />
+<edge id="48" source="chocolate" target="fat" weight="3.000000" />
+<edge id="49" source="microwave" target="sister" weight="4.000000" />
+<edge id="50" source="morning" target="wtf" weight="3.000000" />
+<edge id="51" source="tomorrow" target="zoo" weight="3.000000" />
+<edge id="52" source="early" target="worse" weight="3.000000" />
+<edge id="53" source="930" target="chocolate" weight="3.000000" />
+<edge id="54" source="got" target="places" weight="4.000000" />
+<edge id="55" source="morning" target="sat" weight="4.000000" />
+<edge id="56" source="airports" target="early" weight="3.000000" />
+<edge id="57" source="cup" target="does" weight="3.000000" />
+<edge id="58" source="hot" target="just" weight="3.000000" />
+<edge id="59" source="crisp" target="strangest" weight="3.000000" />
+<edge id="60" source="chocolate" target="cup" weight="3.000000" />
+<edge id="61" source="hug" target="sister" weight="2.000000" />
+<edge id="62" source="alternative" target="indie-rock" weight="2.000000" />
+<edge id="63" source="amazing" target="penguins" weight="5.000000" />
+<edge id="64" source="chocolate" target="microwave" weight="3.000000" />
+<edge id="65" source="runway" target="shouldnt" weight="3.000000" />
+<edge id="66" source="bag" target="years" weight="3.000000" />
+<edge id="67" source="chocolate" target="wanted" weight="3.000000" />
+<edge id="68" source="cashew" target="offered" weight="3.000000" />
+<edge id="69" source="making" target="stansted" weight="3.000000" />
+<edge id="70" source="penguins" target="tomorrow" weight="3.000000" />
+<edge id="71" source="930" target="bar" weight="3.000000" />
+<edge id="72" source="shit" target="younger" weight="3.000000" />
+<edge id="73" source="got" target="just" weight="2.000000" />
+<edge id="74" source="catchy" target="michel-telo" weight="1.000000" />
+<edge id="75" source="just" target="macaroon" weight="4.000000" />
+<edge id="76" source="does" target="godsake" weight="3.000000" />
+<edge id="77" source="point" target="runway" weight="3.000000" />
+<edge id="78" source="does" target="noise" weight="4.000000" />
+<edge id="79" source="early" target="making" weight="3.000000" />
+<edge id="80" source="cashew" target="sex" weight="3.000000" />
+<edge id="81" source="morning" target="saying" weight="5.000000" />
+<edge id="82" source="broke" target="kitchen" weight="6.000000" />
+<edge id="83" source="managers" target="toffees" weight="3.000000" />
+<edge id="84" source="like" target="worse" weight="4.000000" />
+<edge id="85" source="eat" target="just" weight="3.000000" />
+<edge id="86" source="gluten" target="nice" weight="3.000000" />
+<edge id="87" source="didn" target="kinder" weight="3.000000" />
+<edge id="88" source="manchester" target="shouldnt" weight="3.000000" />
+<edge id="89" source="chocolate" target="coconut" weight="4.000000" />
+<edge id="90" source="crash" target="post" weight="6.000000" />
+<edge id="91" source="binned" target="couch" weight="3.000000" />
+<edge id="92" source="got" target="sister" weight="2.000000" />
+<edge id="93" source="build" target="pointless" weight="3.000000" />
+<edge id="94" source="point" target="took" weight="3.000000" />
+<edge id="95" source="fav" target="got" weight="4.000000" />
+<edge id="96" source="bourbons" target="just" weight="5.000000" />
+<edge id="97" source="chocolate" target="morning" weight="4.000000" />
+<edge id="98" source="kinder" target="younger" weight="3.000000" />
+<edge id="99" source="chocolate" target="just" weight="27.000000" />
+<edge id="100" source="justcauseimgoingaway" target="like" weight="3.000000" />
+<edge id="101" source="love" target="wear" weight="4.000000" />
+<edge id="102" source="kinder" target="wanted" weight="3.000000" />
+<edge id="103" source="just" target="sex" weight="4.000000" />
+<edge id="104" source="hate" target="just" weight="3.000000" />
+<edge id="105" source="bar" target="nothealthybreakfast" weight="4.000000" />
+<edge id="106" source="5mins" target="able" weight="3.000000" />
+<edge id="107" source="amazing" target="tapir" weight="2.000000" />
+<edge id="108" source="day" target="hug" weight="4.000000" />
+<edge id="109" source="chocolate" target="great" weight="3.000000" />
+<edge id="110" source="bit" target="decorated" weight="7.000000" />
+<edge id="111" source="giraffes" target="home" weight="2.000000" />
+<edge id="112" source="epic" target="lady-gaga" weight="1.000000" />
+<edge id="113" source="chocolate" target="smoke" weight="3.000000" />
+<edge id="114" source="5mins" target="road" weight="3.000000" />
+<edge id="115" source="bag" target="hasn" weight="3.000000" />
+<edge id="116" source="walkers" target="years" weight="3.000000" />
+<edge id="117" source="ppl" target="trip" weight="4.000000" />
+<edge id="118" source="inside" target="wanted" weight="3.000000" />
+<edge id="119" source="ate" target="seriously" weight="3.000000" />
+<edge id="120" source="dance" target="pop" weight="1.000000" />
+<edge id="121" source="able" target="runway" weight="3.000000" />
+<edge id="122" source="esp" target="hate" weight="3.000000" />
+<edge id="123" source="drive" target="fume" weight="3.000000" />
+<edge id="124" source="chocolate" target="free" weight="3.000000" />
+<edge id="125" source="hahaha" target="managers" weight="3.000000" />
+<edge id="126" source="2011" target="epic" weight="1.000000" />
+<edge id="127" source="hahaha" target="toffees" weight="3.000000" />
+<edge id="128" source="double" target="sister" weight="3.000000" />
+<edge id="129" source="home" target="just" weight="2.000000" />
+<edge id="130" source="chocolate" target="shit" weight="3.000000" />
+<edge id="131" source="nothealthybreakfast" target="yes" weight="3.000000" />
+<edge id="132" source="sat" target="toffees" weight="3.000000" />
+<edge id="133" source="build" target="shit" weight="3.000000" />
+<edge id="134" source="airports" target="time" weight="3.000000" />
+<edge id="135" source="stansted" target="worse" weight="3.000000" />
+<edge id="136" source="late" target="macaroon" weight="3.000000" />
+<edge id="137" source="ate" target="time" weight="3.000000" />
+<edge id="138" source="havent" target="years" weight="9.000000" />
+<edge id="139" source="airports" target="runway" weight="4.000000" />
+<edge id="140" source="5mins" target="point" weight="3.000000" />
+<edge id="141" source="does" target="house" weight="4.000000" />
+<edge id="142" source="got" target="middle" weight="3.000000" />
+<edge id="143" source="gluten" target="late" weight="3.000000" />
+<edge id="144" source="free" target="open" weight="4.000000" />
+<edge id="145" source="just" target="pointless" weight="3.000000" />
+<edge id="146" source="morning" target="stansted" weight="3.000000" />
+<edge id="147" source="decorated" target="nearly" weight="7.000000" />
+<edge id="148" source="turn" target="wide" weight="3.000000" />
+<edge id="149" source="airports" target="walkers" weight="3.000000" />
+<edge id="150" source="just" target="toy" weight="4.000000" />
+<edge id="151" source="couch" target="just" weight="5.000000" />
+<edge id="152" source="listened" target="pepper" weight="6.000000" />
+<edge id="153" source="pointless" target="toy" weight="3.000000" />
+<edge id="154" source="indie" target="indie-rock" weight="2.000000" />
+<edge id="155" source="fume" target="just" weight="3.000000" />
+<edge id="156" source="managers" target="sat" weight="3.000000" />
+<edge id="157" source="like" target="trip" weight="4.000000" />
+<edge id="158" source="chocolate" target="post" weight="7.000000" />
+<edge id="159" source="cup" target="make" weight="3.000000" />
+<edge id="160" source="airports" target="singapore" weight="3.000000" />
+<edge id="161" source="great" target="just" weight="3.000000" />
+<edge id="162" source="just" target="point" weight="3.000000" />
+<edge id="163" source="hate" target="stansted" weight="3.000000" />
+<edge id="164" source="bag" target="cashew" weight="3.000000" />
+<edge id="165" source="accidentally" target="post" weight="7.000000" />
+<edge id="166" source="godsake" target="house" weight="3.000000" />
+<edge id="167" source="chocolate" target="couch" weight="4.000000" />
+<edge id="168" source="chocolate" target="pointless" weight="3.000000" />
+<edge id="169" source="hard-rock" target="rock" weight="1.000000" />
+<edge id="170" source="lady" target="places" weight="3.000000" />
+<edge id="171" source="cookie" target="just" weight="3.000000" />
+<edge id="172" source="morning" target="seriously" weight="4.000000" />
+<edge id="173" source="fat" target="morning" weight="3.000000" />
+<edge id="174" source="penguins" target="wear" weight="4.000000" />
+<edge id="175" source="havent" target="penguins" weight="7.000000" />
+<edge id="176" source="inside" target="pointless" weight="3.000000" />
+<edge id="177" source="house" target="stinks" weight="3.000000" />
+<edge id="178" source="wear" target="zoo" weight="4.000000" />
+<edge id="179" source="middle" target="places" weight="3.000000" />
+<edge id="180" source="epic" target="pop" weight="1.000000" />
+<edge id="181" source="just" target="want" weight="3.000000" />
+<edge id="182" source="double" target="house" weight="3.000000" />
+<edge id="183" source="just" target="shit" weight="3.000000" />
+<edge id="184" source="saying" target="seriously" weight="4.000000" />
+<edge id="185" source="just" target="pepper" weight="7.000000" />
+<edge id="186" source="just" target="walkers" weight="3.000000" />
+<edge id="187" source="amazing" target="got" weight="2.000000" />
+<edge id="188" source="hot" target="house" weight="3.000000" />
+<edge id="189" source="nuts" target="strangest" weight="3.000000" />
+<edge id="190" source="pop" target="rock" weight="1.000000" />
+<edge id="191" source="airports" target="cashew" weight="3.000000" />
+<edge id="192" source="justcauseimgoingaway" target="ppl" weight="3.000000" />
+<edge id="193" source="hot" target="make" weight="4.000000" />
+<edge id="194" source="hasn" target="lady" weight="3.000000" />
+<edge id="195" source="eggs" target="kinder" weight="3.000000" />
+<edge id="196" source="morning" target="toffees" weight="3.000000" />
+<edge id="197" source="930" target="time" weight="3.000000" />
+<edge id="198" source="just" target="road" weight="3.000000" />
+<edge id="199" source="couch" target="let" weight="4.000000" />
+<edge id="200" source="giraffes" target="sister" weight="2.000000" />
+<edge id="201" source="car" target="kitchen" weight="6.000000" />
+<edge id="202" source="places" target="time" weight="4.000000" />
+<edge id="203" source="listened" target="years" weight="7.000000" />
+<edge id="204" source="eat" target="gluten" weight="3.000000" />
+<edge id="205" source="love" target="tomorrow" weight="4.000000" />
+<edge id="206" source="ate" target="great" weight="3.000000" />
+<edge id="207" source="inside" target="shit" weight="3.000000" />
+<edge id="208" source="home" target="today" weight="2.000000" />
+<edge id="209" source="just" target="old" weight="3.000000" />
+<edge id="210" source="binned" target="chocolate" weight="3.000000" />
+<edge id="211" source="crisp" target="old" weight="3.000000" />
+<edge id="212" source="kinder" target="shit" weight="3.000000" />
+<edge id="213" source="morning" target="taking" weight="3.000000" />
+<edge id="214" source="sick" target="singapore" weight="3.000000" />
+<edge id="215" source="month" target="singapore" weight="4.000000" />
+<edge id="216" source="ate" target="just" weight="6.000000" />
+<edge id="217" source="brilliant" target="just" weight="2.000000" />
+<edge id="218" source="microwave" target="whatawaste" weight="3.000000" />
+<edge id="219" source="hot" target="wake" weight="3.000000" />
+<edge id="220" source="brilliant" target="sister" weight="2.000000" />
+<edge id="221" source="car" target="post" weight="7.000000" />
+<edge id="222" source="just" target="sure" weight="4.000000" />
+<edge id="223" source="giraffes" target="sorts" weight="3.000000" />
+<edge id="224" source="just" target="sleep" weight="4.000000" />
+<edge id="225" source="pepper" target="songs" weight="9.000000" />
+<edge id="226" source="shouldnt" target="took" weight="3.000000" />
+<edge id="227" source="bit" target="car" weight="7.000000" />
+<edge id="228" source="feed" target="sister" weight="2.000000" />
+<edge id="229" source="rock" target="seether" weight="1.000000" />
+<edge id="230" source="broke" target="car" weight="8.000000" />
+<edge id="231" source="able" target="woman" weight="4.000000" />
+<edge id="232" source="cashew" target="walkers" weight="3.000000" />
+<edge id="233" source="classical" target="twilight" weight="1.000000" />
+<edge id="234" source="pepper" target="years" weight="7.000000" />
+<edge id="235" source="going" target="time" weight="3.000000" />
+<edge id="236" source="bourbons" target="open" weight="3.000000" />
+<edge id="237" source="classical" target="instrumental" weight="1.000000" />
+<edge id="238" source="chocolate" target="nothealthybreakfast" weight="3.000000" />
+<edge id="239" source="fume" target="point" weight="3.000000" />
+<edge id="240" source="chocolate" target="wtf" weight="3.000000" />
+<edge id="241" source="bit" target="chocolate" weight="6.000000" />
+<edge id="242" source="sick" target="time" weight="4.000000" />
+<edge id="243" source="chocolate" target="younger" weight="3.000000" />
+<edge id="244" source="build" target="younger" weight="3.000000" />
+<edge id="245" source="eat" target="macaroon" weight="3.000000" />
+<edge id="246" source="piano" target="singer-songwriter" weight="1.000000" />
+<edge id="247" source="house" target="whatawaste" weight="3.000000" />
+<edge id="248" source="old" target="walkers" weight="3.000000" />
+<edge id="249" source="bourbons" target="gluten" weight="3.000000" />
+<edge id="250" source="sister" target="smoke" weight="3.000000" />
+<edge id="251" source="cookie" target="whatawaste" weight="3.000000" />
+<edge id="252" source="kettle" target="want" weight="3.000000" />
+<edge id="253" source="hot" target="noise" weight="3.000000" />
+<edge id="254" source="early" target="hate" weight="3.000000" />
+<edge id="255" source="chocolate" target="yes" weight="4.000000" />
+<edge id="256" source="drive" target="wide" weight="3.000000" />
+<edge id="257" source="airports" target="point" weight="3.000000" />
+<edge id="258" source="seriously" target="wtf" weight="3.000000" />
+<edge id="259" source="just" target="justcauseimgoingaway" weight="3.000000" />
+<edge id="260" source="does" target="just" weight="3.000000" />
+<edge id="261" source="chocolate" target="toy" weight="4.000000" />
+<edge id="262" source="old" target="years" weight="3.000000" />
+<edge id="263" source="inside" target="just" weight="4.000000" />
+<edge id="264" source="just" target="sat" weight="4.000000" />
+<edge id="265" source="piano" target="twilight" weight="1.000000" />
+<edge id="266" source="old" target="strangest" weight="3.000000" />
+<edge id="267" source="road" target="woman" weight="3.000000" />
+<edge id="268" source="time" target="yes" weight="4.000000" />
+<edge id="269" source="amazing" target="just" weight="2.000000" />
+<edge id="270" source="american" target="indie" weight="1.000000" />
+<edge id="271" source="cup" target="want" weight="3.000000" />
+<edge id="272" source="shouldnt" target="turn" weight="3.000000" />
+<edge id="273" source="power" target="ppl" weight="4.000000" />
+<edge id="274" source="brilliant" target="hug" weight="3.000000" />
+<edge id="275" source="gluten" target="happens" weight="3.000000" />
+<edge id="276" source="sat" target="seriously" weight="3.000000" />
+<edge id="277" source="tomorrow" target="wear" weight="4.000000" />
+<edge id="278" source="penguins" target="polarbears" weight="7.000000" />
+<edge id="279" source="kitchen" target="post" weight="7.000000" />
+<edge id="280" source="happens" target="just" weight="4.000000" />
+<edge id="281" source="month" target="places" weight="3.000000" />
+<edge id="282" source="5mins" target="took" weight="3.000000" />
+<edge id="283" source="fume" target="turn" weight="3.000000" />
+<edge id="284" source="home" target="hug" weight="2.000000" />
+<edge id="285" source="fat" target="hahaha" weight="3.000000" />
+<edge id="286" source="smoke" target="stinks" weight="4.000000" />
+<edge id="287" source="just" target="worse" weight="3.000000" />
+<edge id="288" source="eggs" target="younger" weight="3.000000" />
+<edge id="289" source="accidentally" target="broke" weight="7.000000" />
+<edge id="290" source="just" target="whatawaste" weight="3.000000" />
+<edge id="291" source="just" target="yes" weight="4.000000" />
+<edge id="292" source="lady" target="strangest" weight="3.000000" />
+<edge id="293" source="indie" target="singer-songwriter" weight="1.000000" />
+<edge id="294" source="songs" target="years" weight="7.000000" />
+<edge id="295" source="eat" target="happens" weight="3.000000" />
+<edge id="296" source="hasn" target="walkers" weight="3.000000" />
+<edge id="297" source="930" target="great" weight="3.000000" />
+<edge id="298" source="bit" target="phone" weight="6.000000" />
+<edge id="299" source="early" target="stansted" weight="3.000000" />
+<edge id="300" source="ate" target="yes" weight="3.000000" />
+<edge id="301" source="britpop" target="pop" weight="1.000000" />
+<edge id="302" source="female-vocals" target="singer-songwriter" weight="1.000000" />
+<edge id="303" source="point" target="woman" weight="3.000000" />
+<edge id="304" source="jungle" target="month" weight="3.000000" />
+<edge id="305" source="930" target="feels" weight="3.000000" />
+<edge id="306" source="esp" target="ppl" weight="3.000000" />
+<edge id="307" source="love" target="penguins" weight="4.000000" />
+<edge id="308" source="polarbears" target="years" weight="6.000000" />
+<edge id="309" source="airports" target="sex" weight="3.000000" />
+<edge id="310" source="house" target="set" weight="3.000000" />
+<edge id="311" source="just" target="nice" weight="3.000000" />
+<edge id="312" source="care" target="chocolate" weight="4.000000" />
+<edge id="313" source="chocolate" target="unless" weight="4.000000" />
+<edge id="314" source="just" target="making" weight="3.000000" />
+<edge id="315" source="kinder" target="toy" weight="3.000000" />
+<edge id="316" source="gluten" target="tempted" weight="3.000000" />
+<edge id="317" source="chocolate" target="whatawaste" weight="3.000000" />
+<edge id="318" source="got" target="jungle" weight="4.000000" />
+<edge id="319" source="coconut" target="gluten" weight="3.000000" />
+<edge id="320" source="amazing" target="today" weight="2.000000" />
+<edge id="321" source="latin" target="pop" weight="1.000000" />
+<edge id="322" source="got" target="hug" weight="2.000000" />
+<edge id="323" source="airports" target="worse" weight="3.000000" />
+<edge id="324" source="bourbons" target="tempted" weight="4.000000" />
+<edge id="325" source="accidentally" target="chocolate" weight="8.000000" />
+<edge id="326" source="didn" target="pointless" weight="3.000000" />
+<edge id="327" source="hug" target="today" weight="3.000000" />
+<edge id="328" source="house" target="make" weight="3.000000" />
+<edge id="329" source="airports" target="nuts" weight="3.000000" />
+<edge id="330" source="sister" target="tapir" weight="2.000000" />
+<edge id="331" source="bag" target="old" weight="4.000000" />
+<edge id="332" source="stinks" target="whatawaste" weight="3.000000" />
+<edge id="333" source="accidentally" target="car" weight="8.000000" />
+<edge id="334" source="british" target="rock" weight="1.000000" />
+<edge id="335" source="chocolate" target="kinder" weight="3.000000" />
+<edge id="336" source="hard-rock" target="seether" weight="1.000000" />
+<edge id="337" source="took" target="wide" weight="3.000000" />
+<edge id="338" source="going" target="middle" weight="3.000000" />
+<edge id="339" source="happens" target="tempted" weight="3.000000" />
+<edge id="340" source="ate" target="wtf" weight="3.000000" />
+<edge id="341" source="chocolate" target="let" weight="3.000000" />
+<edge id="342" source="5mins" target="turn" weight="3.000000" />
+<edge id="343" source="accidentally" target="phone" weight="6.000000" />
+<edge id="344" source="female-vocalist" target="pop" weight="1.000000" />
+<edge id="345" source="ate" target="sat" weight="3.000000" />
+<edge id="346" source="build" target="care" weight="3.000000" />
+<edge id="347" source="amazing" target="brilliant" weight="2.000000" />
+<edge id="348" source="amazing" target="wait" weight="3.000000" />
+<edge id="349" source="places" target="singapore" weight="3.000000" />
+<edge id="350" source="fav" target="time" weight="4.000000" />
+<edge id="351" source="giraffes" target="got" weight="2.000000" />
+<edge id="352" source="does" target="kettle" weight="3.000000" />
+<edge id="353" source="early" target="justcauseimgoingaway" weight="3.000000" />
+<edge id="354" source="fat" target="wtf" weight="3.000000" />
+<edge id="355" source="care" target="pointless" weight="4.000000" />
+<edge id="356" source="airports" target="justcauseimgoingaway" weight="3.000000" />
+<edge id="357" source="wide" target="woman" weight="3.000000" />
+<edge id="358" source="godsake" target="wake" weight="3.000000" />
+<edge id="359" source="crash" target="decorated" weight="7.000000" />
+<edge id="360" source="offered" target="places" weight="3.000000" />
+<edge id="361" source="accidentally" target="bit" weight="6.000000" />
+<edge id="362" source="going" target="month" weight="4.000000" />
+<edge id="363" source="airports" target="fav" weight="3.000000" />
+<edge id="364" source="hahaha" target="morning" weight="3.000000" />
+<edge id="365" source="decorated" target="phone" weight="7.000000" />
+<edge id="366" source="just" target="nuts" weight="3.000000" />
+<edge id="367" source="lady" target="nuts" weight="3.000000" />
+<edge id="368" source="crisp" target="years" weight="4.000000" />
+<edge id="369" source="cup" target="godsake" weight="3.000000" />
+<edge id="370" source="let" target="sleep" weight="4.000000" />
+<edge id="371" source="free" target="nice" weight="3.000000" />
+<edge id="372" source="beautiful" target="piano" weight="1.000000" />
+<edge id="373" source="fume" target="manchester" weight="3.000000" />
+<edge id="374" source="fav" target="singapore" weight="3.000000" />
+<edge id="375" source="jungle" target="time" weight="3.000000" />
+<edge id="376" source="listened" target="songs" weight="6.000000" />
+<edge id="377" source="kettle" target="make" weight="3.000000" />
+<edge id="378" source="feels" target="yes" weight="3.000000" />
+<edge id="379" source="eat" target="free" weight="3.000000" />
+<edge id="380" source="penguins" target="sister" weight="2.000000" />
+<edge id="381" source="just" target="seriously" weight="3.000000" />
+<edge id="382" source="penguins" target="tapir" weight="2.000000" />
+<edge id="383" source="got" target="month" weight="3.000000" />
+<edge id="384" source="feed" target="tapir" weight="2.000000" />
+<edge id="385" source="wait" target="wear" weight="5.000000" />
+<edge id="386" source="just" target="kinder" weight="3.000000" />
+<edge id="387" source="fucking" target="godsake" weight="3.000000" />
+<edge id="388" source="set" target="sister" weight="4.000000" />
+<edge id="389" source="airports" target="lady" weight="3.000000" />
+<edge id="390" source="cashew" target="old" weight="3.000000" />
+<edge id="391" source="massive" target="remembering" weight="8.000000" />
+<edge id="392" source="power" target="trip" weight="4.000000" />
+<edge id="393" source="day" target="penguins" weight="3.000000" />
+<edge id="394" source="set" target="stinks" weight="5.000000" />
+<edge id="395" source="fucking" target="want" weight="3.000000" />
+<edge id="396" source="just" target="saying" weight="4.000000" />
+<edge id="397" source="great" target="yes" weight="3.000000" />
+<edge id="398" source="got" target="home" weight="3.000000" />
+<edge id="399" source="fat" target="just" weight="3.000000" />
+<edge id="400" source="penguins" target="years" weight="6.000000" />
+<edge id="401" source="fav" target="middle" weight="3.000000" />
+<edge id="402" source="930" target="nothealthybreakfast" weight="3.000000" />
+<edge id="403" source="early" target="ppl" weight="3.000000" />
+<edge id="404" source="nearly" target="phone" weight="6.000000" />
+<edge id="405" source="cup" target="house" weight="3.000000" />
+<edge id="406" source="930" target="ate" weight="3.000000" />
+<edge id="407" source="microwave" target="stinks" weight="4.000000" />
+<edge id="408" source="nice" target="open" weight="3.000000" />
+<edge id="409" source="airports" target="fume" weight="3.000000" />
+<edge id="410" source="going" target="places" weight="3.000000" />
+<edge id="411" source="macaroon" target="tempted" weight="3.000000" />
+<edge id="412" source="chocolate" target="wake" weight="4.000000" />
+<edge id="413" source="chocolate" target="set" weight="3.000000" />
+<edge id="414" source="just" target="wide" weight="3.000000" />
+<edge id="415" source="power" target="taking" weight="3.000000" />
+<edge id="416" source="just" target="songs" weight="7.000000" />
+<edge id="417" source="manchester" target="road" weight="3.000000" />
+<edge id="418" source="crisp" target="nuts" weight="3.000000" />
+<edge id="419" source="lady" target="walkers" weight="3.000000" />
+<edge id="420" source="bourbons" target="eat" weight="3.000000" />
+<edge id="421" source="nuts" target="offered" weight="3.000000" />
+<edge id="422" source="old" target="places" weight="3.000000" />
+<edge id="423" source="amazing" target="feed" weight="2.000000" />
+<edge id="424" source="month" target="sick" weight="3.000000" />
+<edge id="425" source="make" target="want" weight="3.000000" />
+<edge id="426" source="day" target="home" weight="2.000000" />
+<edge id="427" source="airports" target="going" weight="4.000000" />
+<edge id="428" source="just" target="morning" weight="7.000000" />
+<edge id="429" source="hahaha" target="wtf" weight="3.000000" />
+<edge id="430" source="airports" target="turn" weight="3.000000" />
+<edge id="431" source="crisp" target="offered" weight="3.000000" />
+<edge id="432" source="just" target="set" weight="4.000000" />
+<edge id="433" source="hate" target="trip" weight="3.000000" />
+<edge id="434" source="morning" target="trip" weight="3.000000" />
+<edge id="435" source="free" target="happens" weight="4.000000" />
+<edge id="436" source="female-vocalist" target="singer-songwriter" weight="1.000000" />
+<edge id="437" source="day" target="tapir" weight="2.000000" />
+<edge id="438" source="just" target="wanted" weight="3.000000" />
+<edge id="439" source="acoustic" target="pop" weight="1.000000" />
+<edge id="440" source="got" target="tapir" weight="2.000000" />
+<edge id="441" source="sex" target="years" weight="4.000000" />
+<edge id="442" source="hahaha" target="seriously" weight="3.000000" />
+<edge id="443" source="massive" target="years" weight="7.000000" />
+<edge id="444" source="does" target="want" weight="3.000000" />
+<edge id="445" source="decorated" target="post" weight="7.000000" />
+<edge id="446" source="chocolate" target="sleep" weight="3.000000" />
+<edge id="447" source="fat" target="managers" weight="3.000000" />
+<edge id="448" source="ate" target="saying" weight="3.000000" />
+<edge id="449" source="fav" target="going" weight="3.000000" />
+<edge id="450" source="chocolate" target="saying" weight="4.000000" />
+<edge id="451" source="brilliant" target="day" weight="3.000000" />
+<edge id="452" source="managers" target="wtf" weight="3.000000" />
+<edge id="453" source="chocolate" target="does" weight="4.000000" />
+<edge id="454" source="jungle" target="middle" weight="3.000000" />
+<edge id="455" source="nuts" target="walkers" weight="3.000000" />
+<edge id="456" source="just" target="strangest" weight="3.000000" />
+<edge id="457" source="shit" target="toy" weight="3.000000" />
+<edge id="458" source="managers" target="seriously" weight="3.000000" />
+<edge id="459" source="able" target="point" weight="3.000000" />
+<edge id="460" source="chocolate" target="nearly" weight="7.000000" />
+<edge id="461" source="decorated" target="kitchen" weight="6.000000" />
+<edge id="462" source="care" target="wanted" weight="3.000000" />
+<edge id="463" source="set" target="whatawaste" weight="3.000000" />
+<edge id="464" source="able" target="turn" weight="3.000000" />
+<edge id="465" source="pointless" target="wanted" weight="3.000000" />
+<edge id="466" source="giraffes" target="just" weight="2.000000" />
+<edge id="467" source="listened" target="polarbears" weight="6.000000" />
+<edge id="468" source="day" target="got" weight="2.000000" />
+<edge id="469" source="havent" target="just" weight="9.000000" />
+<edge id="470" source="alternative" target="american" weight="1.000000" />
+<edge id="471" source="manchester" target="took" weight="3.000000" />
+<edge id="472" source="havent" target="massive" weight="7.000000" />
+<edge id="473" source="bit" target="broke" weight="7.000000" />
+<edge id="474" source="havent" target="polarbears" weight="7.000000" />
+<edge id="475" source="amazing" target="home" weight="2.000000" />
+<edge id="476" source="feed" target="penguins" weight="2.000000" />
+<edge id="477" source="broke" target="post" weight="7.000000" />
+<edge id="478" source="build" target="little" weight="3.000000" />
+<edge id="479" source="coconut" target="eat" weight="3.000000" />
+<edge id="480" source="fucking" target="house" weight="3.000000" />
+<edge id="481" source="ate" target="toffees" weight="3.000000" />
+<edge id="482" source="esp" target="stansted" weight="3.000000" />
+<edge id="483" source="airports" target="sick" weight="4.000000" />
+<edge id="484" source="care" target="little" weight="3.000000" />
+<edge id="485" source="making" target="ppl" weight="3.000000" />
+<edge id="486" source="home" target="sister" weight="2.000000" />
+<edge id="487" source="home" target="tapir" weight="2.000000" />
+<edge id="488" source="airports" target="wide" weight="4.000000" />
+<edge id="489" source="michel-telo" target="pop" weight="1.000000" />
+<edge id="490" source="bag" target="crisp" weight="3.000000" />
+<edge id="491" source="crisp" target="places" weight="3.000000" />
+<edge id="492" source="just" target="places" weight="3.000000" />
+<edge id="493" source="couch" target="sleep" weight="4.000000" />
+<edge id="494" source="making" target="worse" weight="4.000000" />
+<edge id="495" source="drive" target="woman" weight="3.000000" />
+<edge id="496" source="massive" target="pepper" weight="7.000000" />
+<edge id="497" source="didn" target="toy" weight="3.000000" />
+<edge id="498" source="fume" target="runway" weight="3.000000" />
+<edge id="499" source="esp" target="worse" weight="3.000000" />
+<edge id="500" source="build" target="inside" weight="3.000000" />
+<edge id="501" source="chocolate" target="feels" weight="3.000000" />
+<edge id="502" source="hahaha" target="saying" weight="3.000000" />
+<edge id="503" source="build" target="just" weight="3.000000" />
+<edge id="504" source="managers" target="saying" weight="3.000000" />
+<edge id="505" source="care" target="inside" weight="4.000000" />
+<edge id="506" source="listened" target="penguins" weight="6.000000" />
+<edge id="507" source="fat" target="seriously" weight="3.000000" />
+<edge id="508" source="nearly" target="post" weight="7.000000" />
+<edge id="509" source="inside" target="kinder" weight="3.000000" />
+<edge id="510" source="just" target="power" weight="3.000000" />
+<edge id="511" source="house" target="sister" weight="3.000000" />
+<edge id="512" source="eat" target="nice" weight="3.000000" />
+<edge id="513" source="godsake" target="noise" weight="3.000000" />
+<edge id="514" source="bar" target="yes" weight="4.000000" />
+<edge id="515" source="kettle" target="wake" weight="3.000000" />
+<edge id="516" source="car" target="phone" weight="6.000000" />
+<edge id="517" source="chocolate" target="seriously" weight="3.000000" />
+<edge id="518" source="build" target="kinder" weight="3.000000" />
+<edge id="519" source="beautiful" target="indie" weight="1.000000" />
+<edge id="520" source="saying" target="toffees" weight="3.000000" />
+<edge id="521" source="house" target="microwave" weight="3.000000" />
+<edge id="522" source="ate" target="feels" weight="3.000000" />
+<edge id="523" source="chocolate" target="macaroon" weight="3.000000" />
+<edge id="524" source="eggs" target="toy" weight="4.000000" />
+<edge id="525" source="nuts" target="places" weight="3.000000" />
+<edge id="526" source="ppl" target="taking" weight="3.000000" />
+<edge id="527" source="care" target="kinder" weight="3.000000" />
+<edge id="528" source="bit" target="kitchen" weight="6.000000" />
+<edge id="529" source="gonna" target="penguins" weight="4.000000" />
+<edge id="530" source="2011" target="pop" weight="2.000000" />
+<edge id="531" source="hug" target="just" weight="2.000000" />
+<edge id="532" source="crisp" target="hasn" weight="4.000000" />
+<edge id="533" source="justcauseimgoingaway" target="power" weight="3.000000" />
+<edge id="534" source="able" target="drive" weight="3.000000" />
+<edge id="535" source="cup" target="wake" weight="3.000000" />
+<edge id="536" source="hasn" target="just" weight="4.000000" />
+<edge id="537" source="chocolate" target="hahaha" weight="3.000000" />
+<edge id="538" source="fume" target="shouldnt" weight="3.000000" />
+<edge id="539" source="nuts" target="sex" weight="3.000000" />
+<edge id="540" source="chocolate" target="nice" weight="3.000000" />
+<edge id="541" source="binned" target="just" weight="3.000000" />
+<edge id="542" source="fucking" target="hot" weight="4.000000" />
+<edge id="543" source="strangest" target="years" weight="3.000000" />
+<edge id="544" source="point" target="turn" weight="3.000000" />
+<edge id="545" source="jungle" target="places" weight="3.000000" />
+<edge id="546" source="bag" target="just" weight="3.000000" />
+<edge id="547" source="gluten" target="open" weight="3.000000" />
+<edge id="548" source="chocolate" target="late" weight="3.000000" />
+<edge id="549" source="morning" target="ppl" weight="3.000000" />
+<edge id="550" source="chocolate" target="decorated" weight="7.000000" />
+<edge id="551" source="coconut" target="tempted" weight="4.000000" />
+<edge id="552" source="ate" target="chocolate" weight="6.000000" />
+<edge id="553" source="930" target="yes" weight="3.000000" />
+<edge id="554" source="stansted" target="taking" weight="3.000000" />
+<edge id="555" source="pointless" target="shit" weight="4.000000" />
+<edge id="556" source="alternative" target="rock" weight="3.000000" />
+<edge id="557" source="accidentally" target="crash" weight="6.000000" />
+<edge id="558" source="got" target="penguins" weight="2.000000" />
+<edge id="559" source="accidentally" target="decorated" weight="7.000000" />
+<edge id="560" source="bourbons" target="nice" weight="3.000000" />
+<edge id="561" source="female-vocalist" target="female-vocals" weight="1.000000" />
+<edge id="562" source="manchester" target="runway" weight="3.000000" />
+<edge id="563" source="justcauseimgoingaway" target="stansted" weight="3.000000" />
+<edge id="564" source="massive" target="songs" weight="6.000000" />
+<edge id="565" source="just" target="took" weight="3.000000" />
+<edge id="566" source="places" target="sick" weight="4.000000" />
+<edge id="567" source="chocolate" target="crash" weight="6.000000" />
+<edge id="568" source="does" target="make" weight="3.000000" />
+<edge id="569" source="just" target="sorts" weight="2.000000" />
+<edge id="570" source="runway" target="woman" weight="3.000000" />
+<edge id="571" source="places" target="strangest" weight="3.000000" />
+<edge id="572" source="classical" target="yiruma" weight="1.000000" />
+<edge id="573" source="fav" target="jungle" weight="3.000000" />
+<edge id="574" source="feels" target="nothealthybreakfast" weight="3.000000" />
+<edge id="575" source="crisp" target="just" weight="4.000000" />
+<edge id="576" source="kinder" target="pointless" weight="3.000000" />
+<edge id="577" source="latin" target="michel-telo" weight="1.000000" />
+<edge id="578" source="amazing" target="zoo" weight="3.000000" />
+<edge id="579" source="tapir" target="today" weight="2.000000" />
+<edge id="580" source="amazing" target="gonna" weight="3.000000" />
+<edge id="581" source="listened" target="remembering" weight="7.000000" />
+<edge id="582" source="lady" target="offered" weight="3.000000" />
+<edge id="583" source="amazing" target="day" weight="2.000000" />
+<edge id="584" source="able" target="manchester" weight="3.000000" />
+<edge id="585" source="middle" target="time" weight="3.000000" />
+<edge id="586" source="airports" target="crisp" weight="3.000000" />
+<edge id="587" source="feed" target="hug" weight="2.000000" />
+<edge id="588" source="inside" target="toy" weight="4.000000" />
+<edge id="589" source="airports" target="road" weight="3.000000" />
+<edge id="590" source="penguins" target="songs" weight="7.000000" />
+<edge id="591" source="binned" target="sure" weight="4.000000" />
+<edge id="592" source="indie" target="rock" weight="2.000000" />
+<edge id="593" source="brilliant" target="today" weight="3.000000" />
+<edge id="594" source="able" target="fume" weight="4.000000" />
+<edge id="595" source="fucking" target="kettle" weight="3.000000" />
+<edge id="596" source="acoustic" target="female-vocalist" weight="1.000000" />
+<edge id="597" source="hate" target="morning" weight="3.000000" />
+<edge id="598" source="5mins" target="manchester" weight="3.000000" />
+<edge id="599" source="sister" target="stinks" weight="4.000000" />
+<edge id="600" source="just" target="little" weight="3.000000" />
+<edge id="601" source="gonna" target="zoo" weight="4.000000" />
+<edge id="602" source="instrumental" target="piano" weight="1.000000" />
+<edge id="603" source="sleep" target="unless" weight="4.000000" />
+<edge id="604" source="got" target="sick" weight="5.000000" />
+<edge id="605" source="just" target="like" weight="3.000000" />
+<edge id="606" source="inside" target="younger" weight="3.000000" />
+<edge id="607" source="like" target="stansted" weight="3.000000" />
+<edge id="608" source="airports" target="taking" weight="3.000000" />
+<edge id="609" source="bourbons" target="macaroon" weight="3.000000" />
+<edge id="610" source="early" target="taking" weight="3.000000" />
+<edge id="611" source="house" target="wake" weight="4.000000" />
+<edge id="612" source="giraffes" target="hug" weight="3.000000" />
+<edge id="613" source="chocolate" target="cookie" weight="3.000000" />
+<edge id="614" source="crash" target="phone" weight="6.000000" />
+<edge id="615" source="managers" target="morning" weight="3.000000" />
+<edge id="616" source="car" target="chocolate" weight="8.000000" />
+<edge id="617" source="feed" target="giraffes" weight="2.000000" />
+<edge id="618" source="chocolate" target="didn" weight="4.000000" />
+<edge id="619" source="morning" target="power" weight="3.000000" />
+<edge id="620" source="fat" target="saying" weight="3.000000" />
+<edge id="621" source="justcauseimgoingaway" target="taking" weight="3.000000" />
+<edge id="622" source="godsake" target="just" weight="3.000000" />
+<edge id="623" source="gonna" target="tomorrow" weight="4.000000" />
+<edge id="624" source="car" target="decorated" weight="8.000000" />
+<edge id="625" source="coconut" target="late" weight="3.000000" />
+<edge id="626" source="fucking" target="noise" weight="3.000000" />
+<edge id="627" source="hasn" target="places" weight="3.000000" />
+<edge id="628" source="saying" target="wtf" weight="3.000000" />
+<edge id="629" source="sleep" target="sure" weight="4.000000" />
+<edge id="630" source="places" target="walkers" weight="3.000000" />
+<edge id="631" source="just" target="kettle" weight="3.000000" />
+<edge id="632" source="bag" target="walkers" weight="3.000000" />
+<edge id="633" source="amazing" target="sister" weight="2.000000" />
+<edge id="634" source="manchester" target="wide" weight="3.000000" />
+<edge id="635" source="brilliant" target="sorts" weight="3.000000" />
+<edge id="636" source="just" target="wake" weight="3.000000" />
+<edge id="637" source="lady" target="years" weight="3.000000" />
+<edge id="638" source="going" target="got" weight="4.000000" />
+<edge id="639" source="able" target="road" weight="3.000000" />
+<edge id="640" source="chocolate" target="house" weight="7.000000" />
+<edge id="641" source="just" target="polarbears" weight="6.000000" />
+<edge id="642" source="feed" target="today" weight="2.000000" />
+<edge id="643" source="amazing" target="wear" weight="3.000000" />
+<edge id="644" source="havent" target="listened" weight="7.000000" />
+<edge id="645" source="broke" target="phone" weight="6.000000" />
+<edge id="646" source="penguins" target="today" weight="2.000000" />
+<edge id="647" source="chocolate" target="time" weight="4.000000" />
+<edge id="648" source="catchy" target="pop" weight="1.000000" />
+<edge id="649" source="cookie" target="set" weight="3.000000" />
+<edge id="650" source="feed" target="home" weight="2.000000" />
+<edge id="651" source="chocolate" target="sure" weight="4.000000" />
+<edge id="652" source="airports" target="ppl" weight="5.000000" />
+<edge id="653" source="chocolate" target="happens" weight="3.000000" />
+<edge id="654" source="just" target="remembering" weight="8.000000" />
+<edge id="655" source="2011" target="catchy" weight="1.000000" />
+<edge id="656" source="offered" target="sex" weight="3.000000" />
+<edge id="657" source="penguins" target="remembering" weight="6.000000" />
+<edge id="658" source="free" target="tempted" weight="3.000000" />
+<edge id="659" source="build" target="eggs" weight="3.000000" />
+<edge id="660" source="offered" target="old" weight="3.000000" />
+<edge id="661" source="chocolate" target="hot" weight="3.000000" />
+<edge id="662" source="took" target="turn" weight="3.000000" />
+<edge id="663" source="taking" target="trip" weight="3.000000" />
+<edge id="664" source="house" target="just" weight="6.000000" />
+<edge id="665" source="airports" target="stansted" weight="3.000000" />
+<edge id="666" source="care" target="eggs" weight="4.000000" />
+<edge id="667" source="chocolate" target="phone" weight="6.000000" />
+<edge id="668" source="shit" target="wanted" weight="3.000000" />
+<edge id="669" source="double" target="stinks" weight="3.000000" />
+<edge id="670" source="5mins" target="drive" weight="3.000000" />
+<edge id="671" source="fat" target="toffees" weight="3.000000" />
+<edge id="672" source="airports" target="took" weight="3.000000" />
+<edge id="673" source="runway" target="took" weight="3.000000" />
+<edge id="674" source="brilliant" target="feed" weight="2.000000" />
+<edge id="675" source="cashew" target="lady" weight="3.000000" />
+<edge id="676" source="wait" target="zoo" weight="4.000000" />
+<edge id="677" source="gonna" target="love" weight="4.000000" />
+<edge id="678" source="fucking" target="wake" weight="3.000000" />
+<edge id="679" source="just" target="shouldnt" weight="3.000000" />
+<edge id="680" source="house" target="kettle" weight="3.000000" />
+<edge id="681" source="day" target="sorts" weight="4.000000" />
+<edge id="682" source="fume" target="road" weight="3.000000" />
+<edge id="683" source="bag" target="sex" weight="3.000000" />
+<edge id="684" source="just" target="penguins" weight="8.000000" />
+<edge id="685" source="build" target="wanted" weight="3.000000" />
+<edge id="686" source="cookie" target="sister" weight="3.000000" />
+<edge id="687" source="alternative-rock" target="seether" weight="1.000000" />
+<edge id="688" source="brilliant" target="tapir" weight="2.000000" />
+<edge id="689" source="power" target="stansted" weight="3.000000" />
+<edge id="690" source="seriously" target="toffees" weight="3.000000" />
+<edge id="691" source="manchester" target="point" weight="3.000000" />
+<edge id="692" source="acoustic" target="female-vocals" weight="1.000000" />
+<edge id="693" source="remembering" target="songs" weight="6.000000" />
+<edge id="694" source="hahaha" target="just" weight="3.000000" />
+<edge id="695" source="coconut" target="free" weight="3.000000" />
+<edge id="696" source="little" target="wanted" weight="3.000000" />
+<edge id="697" source="sex" target="walkers" weight="3.000000" />
+<edge id="698" source="little" target="pointless" weight="3.000000" />
+<edge id="699" source="making" target="trip" weight="4.000000" />
+<edge id="700" source="does" target="hot" weight="3.000000" />
+<edge id="701" source="hot" target="want" weight="3.000000" />
+<edge id="702" source="hug" target="tapir" weight="2.000000" />
+<edge id="703" source="didn" target="shit" weight="3.000000" />
+<edge id="704" source="alternative" target="hard-rock" weight="1.000000" />
+<edge id="705" source="feed" target="got" weight="2.000000" />
+<edge id="706" source="couch" target="sure" weight="4.000000" />
+<edge id="707" source="double" target="set" weight="3.000000" />
+<edge id="708" source="bourbons" target="free" weight="3.000000" />
+<edge id="709" source="chocolate" target="open" weight="3.000000" />
+<edge id="710" source="alternative" target="indie" weight="2.000000" />
+<edge id="711" source="lady" target="sex" weight="3.000000" />
+<edge id="712" source="2011" target="michel-telo" weight="1.000000" />
+<edge id="713" source="day" target="sister" weight="2.000000" />
+<edge id="714" source="esp" target="taking" weight="3.000000" />
+<edge id="715" source="drive" target="point" weight="3.000000" />
+<edge id="716" source="just" target="years" weight="13.000000" />
+<edge id="717" source="trip" target="worse" weight="4.000000" />
+<edge id="718" source="amazing" target="love" weight="3.000000" />
+<edge id="719" source="house" target="noise" weight="4.000000" />
+<edge id="720" source="double" target="smoke" weight="3.000000" />
+<edge id="721" source="love" target="zoo" weight="4.000000" />
+<edge id="722" source="home" target="penguins" weight="2.000000" />
+<edge id="723" source="godsake" target="want" weight="3.000000" />
+<edge id="724" source="kettle" target="noise" weight="3.000000" />
+<edge id="725" source="pointless" target="younger" weight="3.000000" />
+<edge id="726" source="esp" target="like" weight="3.000000" />
+<edge id="727" source="chocolate" target="fucking" weight="3.000000" />
+<edge id="728" source="cup" target="kettle" weight="3.000000" />
+<edge id="729" source="care" target="shit" weight="4.000000" />
+<edge id="730" source="kitchen" target="nearly" weight="7.000000" />
+<edge id="731" source="ate" target="managers" weight="3.000000" />
+<edge id="732" source="didn" target="just" weight="3.000000" />
+<edge id="733" source="eggs" target="little" weight="3.000000" />
+<edge id="734" source="hate" target="worse" weight="3.000000" />
+<edge id="735" source="airports" target="offered" weight="3.000000" />
+<edge id="736" source="classical" target="piano" weight="1.000000" />
+<edge id="737" source="fume" target="wide" weight="3.000000" />
+<edge id="738" source="instrumental" target="twilight" weight="1.000000" />
+<edge id="739" source="old" target="sex" weight="3.000000" />
+<edge id="740" source="justcauseimgoingaway" target="making" weight="3.000000" />
+<edge id="741" source="hate" target="ppl" weight="4.000000" />
+<edge id="742" source="hug" target="sorts" weight="4.000000" />
+<edge id="743" source="binned" target="sleep" weight="4.000000" />
+<edge id="744" source="feels" target="time" weight="3.000000" />
+<edge id="745" source="early" target="power" weight="3.000000" />
+<edge id="746" source="nuts" target="years" weight="3.000000" />
+<edge id="747" source="hasn" target="strangest" weight="3.000000" />
+<edge id="748" source="set" target="smoke" weight="4.000000" />
+<edge id="749" source="eggs" target="inside" weight="5.000000" />
+<edge id="750" source="esp" target="making" weight="3.000000" />
+<edge id="751" source="going" target="singapore" weight="4.000000" />
+<edge id="752" source="macaroon" target="nice" weight="3.000000" />
+<edge id="753" source="airports" target="old" weight="3.000000" />
+<edge id="754" source="got" target="today" weight="2.000000" />
+<edge id="755" source="amazing" target="giraffes" weight="2.000000" />
+<edge id="756" source="lady" target="old" weight="3.000000" />
+<edge id="757" source="british" target="pop" weight="1.000000" />
+<edge id="758" source="bar" target="great" weight="3.000000" />
+<edge id="759" source="crash" target="kitchen" weight="6.000000" />
+<edge id="760" source="5mins" target="wide" weight="3.000000" />
+<edge id="761" source="free" target="late" weight="3.000000" />
+<edge id="762" source="runway" target="turn" weight="3.000000" />
+<edge id="763" source="cashew" target="just" weight="3.000000" />
+<edge id="764" source="middle" target="month" weight="3.000000" />
+<edge id="765" source="polarbears" target="remembering" weight="6.000000" />
+<edge id="766" source="bourbons" target="coconut" weight="4.000000" />
+<edge id="767" source="2011" target="latin" weight="1.000000" />
+<edge id="768" source="remembering" target="years" weight="8.000000" />
+<edge id="769" source="dance" target="lady-gaga" weight="1.000000" />
+<edge id="770" source="like" target="power" weight="5.000000" />
+<edge id="771" source="bar" target="feels" weight="3.000000" />
+<edge id="772" source="toffees" target="wtf" weight="3.000000" />
+<edge id="773" source="5mins" target="runway" weight="3.000000" />
+<edge id="774" source="eggs" target="pointless" weight="3.000000" />
+<edge id="775" source="piano" target="yiruma" weight="1.000000" />
+<edge id="776" source="just" target="sister" weight="6.000000" />
+<edge id="777" source="happens" target="nice" weight="3.000000" />
+<edge id="778" source="airports" target="jungle" weight="4.000000" />
+<edge id="779" source="free" target="macaroon" weight="4.000000" />
+<edge id="780" source="just" target="turn" weight="3.000000" />
+<edge id="781" source="esp" target="trip" weight="3.000000" />
+<edge id="782" source="crisp" target="sex" weight="4.000000" />
+<edge id="783" source="early" target="esp" weight="3.000000" />
+<edge id="784" source="massive" target="penguins" weight="6.000000" />
+<edge id="785" source="point" target="shouldnt" weight="3.000000" />
+<edge id="786" source="care" target="just" weight="3.000000" />
+<edge id="787" source="just" target="runway" weight="3.000000" />
+<edge id="788" source="month" target="time" weight="3.000000" />
+<edge id="789" source="feed" target="just" weight="2.000000" />
+<edge id="790" source="chocolate" target="noise" weight="4.000000" />
+<edge id="791" source="airports" target="years" weight="3.000000" />
+<edge id="792" source="just" target="today" weight="2.000000" />
+<edge id="793" source="penguins" target="zoo" weight="5.000000" />
+<edge id="794" source="gluten" target="macaroon" weight="3.000000" />
+<edge id="795" source="macaroon" target="open" weight="4.000000" />
+<edge id="796" source="cookie" target="double" weight="3.000000" />
+<edge id="797" source="didn" target="wanted" weight="3.000000" />
+<edge id="798" source="5mins" target="shouldnt" weight="3.000000" />
+<edge id="799" source="esp" target="morning" weight="3.000000" />
+<edge id="800" source="930" target="just" weight="3.000000" />
+<edge id="801" source="coconut" target="open" weight="3.000000" />
+<edge id="802" source="giraffes" target="penguins" weight="3.000000" />
+<edge id="803" source="just" target="offered" weight="3.000000" />
+<edge id="804" source="esp" target="justcauseimgoingaway" weight="3.000000" />
+<edge id="805" source="penguins" target="sorts" weight="3.000000" />
+<edge id="806" source="just" target="noise" weight="3.000000" />
+<edge id="807" source="sat" target="wtf" weight="3.000000" />
+<edge id="808" source="justcauseimgoingaway" target="worse" weight="3.000000" />
+<edge id="809" source="late" target="tempted" weight="3.000000" />
+<edge id="810" source="bit" target="post" weight="6.000000" />
+<edge id="811" source="crash" target="nearly" weight="6.000000" />
+<edge id="812" source="airports" target="drive" weight="3.000000" />
+<edge id="813" source="wanted" target="younger" weight="3.000000" />
+<edge id="814" source="point" target="wide" weight="3.000000" />
+<edge id="815" source="make" target="wake" weight="3.000000" />
+<edge id="816" source="just" target="unless" weight="5.000000" />
+<edge id="817" source="chocolate" target="want" weight="3.000000" />
+<edge id="818" source="instrumental" target="yiruma" weight="1.000000" />
+<edge id="819" source="lady-gaga" target="pop" weight="1.000000" />
+<edge id="820" source="penguins" target="wait" weight="4.000000" />
+<edge id="821" source="esp" target="power" weight="3.000000" />
+<edge id="822" source="folk" target="indie" weight="1.000000" />
+<edge id="823" source="ate" target="nothealthybreakfast" weight="3.000000" />
+<edge id="824" source="smoke" target="whatawaste" weight="3.000000" />
+<edge id="825" source="like" target="morning" weight="3.000000" />
+<edge id="826" source="airports" target="woman" weight="3.000000" />
+<edge id="827" source="build" target="didn" weight="3.000000" />
+<edge id="828" source="couch" target="unless" weight="5.000000" />
+<edge id="829" source="dance" target="epic" weight="1.000000" />
+<edge id="830" source="hate" target="making" weight="3.000000" />
+<edge id="831" source="singapore" target="time" weight="3.000000" />
+<edge id="832" source="wake" target="want" weight="3.000000" />
+<edge id="833" source="fav" target="month" weight="3.000000" />
+<edge id="834" source="just" target="tempted" weight="4.000000" />
+<edge id="835" source="gonna" target="wait" weight="5.000000" />
+<edge id="836" source="drive" target="took" weight="3.000000" />
+<edge id="837" source="day" target="giraffes" weight="3.000000" />
+<edge id="838" source="britpop" target="mcfly" weight="1.000000" />
+<edge id="839" source="late" target="open" weight="3.000000" />
+<edge id="840" source="pepper" target="remembering" weight="7.000000" />
+<edge id="841" source="5mins" target="just" weight="3.000000" />
+<edge id="842" source="hug" target="penguins" weight="3.000000" />
+<edge id="843" source="just" target="open" weight="4.000000" />
+<edge id="844" source="just" target="tapir" weight="2.000000" />
+<edge id="845" source="morning" target="worse" weight="3.000000" />
+<edge id="846" source="just" target="ppl" weight="3.000000" />
+<edge id="847" source="alternative-rock" target="indie" weight="1.000000" />
+<edge id="848" source="cashew" target="places" weight="3.000000" />
+<edge id="849" source="early" target="just" weight="3.000000" />
+<edge id="850" source="build" target="chocolate" weight="3.000000" />
+<edge id="851" source="bar" target="just" weight="5.000000" />
+<edge id="852" source="5mins" target="airports" weight="3.000000" />
+<edge id="853" source="love" target="wait" weight="4.000000" />
+<edge id="854" source="alternative-rock" target="rock" weight="2.000000" />
+<edge id="855" source="5mins" target="fume" weight="3.000000" />
+<edge id="856" source="fav" target="places" weight="4.000000" />
+<edge id="857" source="chocolate" target="eggs" weight="5.000000" />
+<edge id="858" source="airports" target="strangest" weight="3.000000" />
+<edge id="859" source="chocolate" target="kettle" weight="3.000000" />
+<edge id="860" source="sex" target="strangest" weight="3.000000" />
+<edge id="861" source="bit" target="crash" weight="7.000000" />
+<edge id="862" source="chocolate" target="double" weight="3.000000" />
+<edge id="863" source="beautiful" target="folk" weight="1.000000" />
+<edge id="864" source="bag" target="strangest" weight="3.000000" />
+<edge id="865" source="justcauseimgoingaway" target="trip" weight="3.000000" />
+<edge id="866" source="drive" target="runway" weight="3.000000" />
+<edge id="867" source="power" target="worse" weight="4.000000" />
+<edge id="868" source="pop" target="singer-songwriter" weight="1.000000" />
+<edge id="869" source="twilight" target="yiruma" weight="1.000000" />
+<edge id="870" source="cookie" target="smoke" weight="3.000000" />
+<edge id="871" source="bag" target="offered" weight="3.000000" />
+<edge id="872" source="hate" target="taking" weight="3.000000" />
+<edge id="873" source="house" target="smoke" weight="3.000000" />
+<edge id="874" source="coconut" target="macaroon" weight="3.000000" />
+<edge id="875" source="accidentally" target="nearly" weight="7.000000" />
+<edge id="876" source="sorts" target="today" weight="3.000000" />
+<edge id="877" source="penguins" target="pepper" weight="7.000000" />
+<edge id="878" source="cookie" target="house" weight="3.000000" />
+<edge id="879" source="ate" target="fat" weight="3.000000" />
+<edge id="880" source="gonna" target="wear" weight="5.000000" />
+<edge id="881" source="just" target="wtf" weight="3.000000" />
+<edge id="882" source="godsake" target="hot" weight="3.000000" />
+<edge id="883" source="hot" target="kettle" weight="3.000000" />
+<edge id="884" source="feels" target="great" weight="3.000000" />
+<edge id="885" source="hate" target="power" weight="4.000000" />
+<edge id="886" source="eat" target="late" weight="3.000000" />
+<edge id="887" source="going" target="jungle" weight="4.000000" />
+<edge id="888" source="beautiful" target="singer-songwriter" weight="1.000000" />
+<edge id="889" source="road" target="runway" weight="3.000000" />
+<edge id="890" source="early" target="morning" weight="3.000000" />
+<edge id="891" source="chocolate" target="little" weight="3.000000" />
+<edge id="892" source="just" target="managers" weight="3.000000" />
+<edge id="893" source="ate" target="hahaha" weight="3.000000" />
+<edge id="894" source="early" target="trip" weight="3.000000" />
+<edge id="895" source="didn" target="younger" weight="3.000000" />
+<edge id="896" source="broke" target="decorated" weight="7.000000" />
+<edge id="897" source="house" target="want" weight="3.000000" />
+<edge id="898" source="binned" target="unless" weight="3.000000" />
+<edge id="899" source="free" target="just" weight="4.000000" />
+<edge id="900" source="drive" target="turn" weight="3.000000" />
+<edge id="901" source="point" target="road" weight="3.000000" />
+<edge id="902" source="airports" target="making" weight="3.000000" />
+<edge id="903" source="drive" target="road" weight="3.000000" />
+<edge id="904" source="able" target="wide" weight="3.000000" />
+<edge id="905" source="jungle" target="singapore" weight="3.000000" />
+<edge id="906" source="eat" target="tempted" weight="3.000000" />
+<edge id="907" source="microwave" target="smoke" weight="3.000000" />
+<edge id="908" source="just" target="woman" weight="3.000000" />
+<edge id="909" source="like" target="taking" weight="3.000000" />
+<edge id="910" source="free" target="gluten" weight="3.000000" />
+<edge id="911" source="jungle" target="sick" weight="4.000000" />
+<edge id="912" source="cup" target="fucking" weight="3.000000" />
+<edge id="913" source="ppl" target="stansted" weight="3.000000" />
+<edge id="914" source="middle" target="singapore" weight="3.000000" />
+<edge id="915" source="nothealthybreakfast" target="time" weight="3.000000" />
+<edge id="916" source="just" target="stinks" weight="4.000000" />
+<edge id="917" source="havent" target="pepper" weight="9.000000" />
+<edge id="918" source="drive" target="just" weight="3.000000" />
+<edge id="919" source="able" target="shouldnt" weight="3.000000" />
+<edge id="920" source="brilliant" target="giraffes" weight="2.000000" />
+<edge id="921" source="just" target="nothealthybreakfast" weight="4.000000" />
+<edge id="922" source="2011" target="dance" weight="1.000000" />
+<edge id="923" source="let" target="unless" weight="4.000000" />
+<edge id="924" source="does" target="wake" weight="4.000000" />
+<edge id="925" source="fav" target="sick" weight="4.000000" />
+<edge id="926" source="happens" target="open" weight="4.000000" />
+<edge id="927" source="cashew" target="strangest" weight="3.000000" />
+<edge id="928" source="ate" target="morning" weight="3.000000" />
+<edge id="929" source="bit" target="nearly" weight="6.000000" />
+<edge id="930" source="coconut" target="just" weight="4.000000" />
+<edge id="931" source="early" target="like" weight="3.000000" />
+<edge id="932" source="chocolate" target="sister" weight="3.000000" />
+<edge id="933" source="fume" target="took" weight="4.000000" />
+<edge id="934" source="gluten" target="just" weight="3.000000" />
+<edge id="935" source="5mins" target="woman" weight="3.000000" />
+<edge id="936" source="esp" target="just" weight="3.000000" />
+<edge id="937" source="just" target="taking" weight="3.000000" />
+<edge id="938" source="fucking" target="make" weight="4.000000" />
+<edge id="939" source="kitchen" target="phone" weight="6.000000" />
+<edge id="940" source="chocolate" target="managers" weight="3.000000" />
+<edge id="941" source="runway" target="wide" weight="4.000000" />
+<edge id="942" source="strangest" target="walkers" weight="3.000000" />
+<edge id="943" source="cashew" target="hasn" weight="3.000000" />
+<edge id="944" source="just" target="late" weight="3.000000" />
+<edge id="945" source="shouldnt" target="woman" weight="3.000000" />
+<edge id="946" source="just" target="manchester" weight="3.000000" />
+<edge id="947" source="crisp" target="lady" weight="3.000000" />
+<edge id="948" source="late" target="nice" weight="3.000000" />
+<edge id="949" source="just" target="make" weight="3.000000" />
+<edge id="950" source="make" target="noise" weight="3.000000" />
+<edge id="951" source="just" target="toffees" weight="3.000000" />
+<edge id="952" source="double" target="whatawaste" weight="3.000000" />
+<edge id="953" source="build" target="toy" weight="3.000000" />
+<edge id="954" source="kinder" target="little" weight="3.000000" />
+<edge id="955" source="like" target="making" weight="4.000000" />
+<edge id="956" source="bar" target="time" weight="4.000000" />
+<edge id="957" source="happens" target="late" weight="3.000000" />
+<edge id="958" source="making" target="morning" weight="3.000000" />
+<edge id="959" source="british" target="britpop" weight="1.000000" />
+<edge id="960" source="care" target="toy" weight="3.000000" />
+<edge id="961" source="just" target="microwave" weight="4.000000" />
+<edge id="962" source="airports" target="esp" weight="3.000000" />
+<edge id="963" source="bourbons" target="chocolate" weight="5.000000" />
+<edge id="964" source="justcauseimgoingaway" target="morning" weight="3.000000" />
+<edge id="965" source="let" target="sure" weight="3.000000" />
+<edge id="966" source="bourbons" target="happens" weight="3.000000" />
+<edge id="967" source="noise" target="wake" weight="4.000000" />
+<edge id="968" source="sorts" target="tapir" weight="2.000000" />
+<edge id="969" source="american" target="indie-rock" weight="1.000000" />
+<edge id="970" source="nuts" target="old" weight="4.000000" />
+<edge id="971" source="going" target="sick" weight="4.000000" />
+<edge id="972" source="open" target="tempted" weight="3.000000" />
+<edge id="973" source="places" target="sex" weight="3.000000" />
+<edge id="974" source="road" target="wide" weight="3.000000" />
+<edge id="975" source="got" target="time" weight="4.000000" />
+<edge id="976" source="brilliant" target="home" weight="3.000000" />
+<edge id="977" source="godsake" target="make" weight="3.000000" />
+<edge id="978" source="ppl" target="worse" weight="3.000000" />
+<edge id="979" source="just" target="trip" weight="3.000000" />
+<edge id="980" source="just" target="let" weight="4.000000" />
+<edge id="981" source="road" target="shouldnt" weight="3.000000" />
+<edge id="982" source="british" target="mcfly" weight="1.000000" />
+<edge id="983" source="road" target="turn" weight="3.000000" />
+<edge id="984" source="nice" target="tempted" weight="3.000000" />
+<edge id="985" source="turn" target="woman" weight="3.000000" />
+<edge id="986" source="eggs" target="wanted" weight="3.000000" />
+<edge id="987" source="offered" target="strangest" weight="3.000000" />
+<edge id="988" source="hasn" target="sex" weight="4.000000" />
+<edge id="989" source="polarbears" target="songs" weight="7.000000" />
+<edge id="990" source="airports" target="manchester" weight="3.000000" />
+<edge id="991" source="road" target="took" weight="3.000000" />
+<edge id="992" source="hasn" target="nuts" weight="3.000000" />
+<edge id="993" source="toy" target="younger" weight="3.000000" />
+<edge id="994" source="amazing" target="hug" weight="2.000000" />
+<edge id="995" source="offered" target="walkers" weight="3.000000" />
+<edge id="996" source="manchester" target="woman" weight="3.000000" />
+<edge id="997" source="massive" target="polarbears" weight="6.000000" />
+<edge id="998" source="car" target="nearly" weight="7.000000" />
+<edge id="999" source="cup" target="just" weight="3.000000" />
+<edge id="1000" source="broke" target="chocolate" weight="7.000000" />
+<edge id="1001" source="chocolate" target="toffees" weight="3.000000" />
+<edge id="1002" source="amazing" target="sorts" weight="2.000000" />
+<edge id="1003" source="giraffes" target="today" weight="2.000000" />
+<edge id="1004" source="eggs" target="shit" weight="3.000000" />
+<edge id="1005" source="airports" target="got" weight="4.000000" />
+<edge id="1006" source="just" target="younger" weight="3.000000" />
+<edge id="1007" source="giraffes" target="tapir" weight="2.000000" />
+<edge id="1008" source="bar" target="chocolate" weight="4.000000" />
+<edge id="1009" source="american" target="rock" weight="1.000000" />
+<edge id="1010" source="cup" target="noise" weight="3.000000" />
+<edge id="1011" source="bag" target="places" weight="3.000000" />
+<edge id="1012" source="ate" target="bar" weight="3.000000" />
+<edge id="1013" source="alternative" target="seether" weight="1.000000" />
+<edge id="1014" source="amazing" target="tomorrow" weight="3.000000" />
+<edge id="1015" source="great" target="time" weight="3.000000" />
+<edge id="1016" source="day" target="just" weight="2.000000" />
+<edge id="1017" source="toy" target="wanted" weight="3.000000" />
+<edge id="1018" source="bag" target="nuts" weight="4.000000" />
+<edge id="1019" source="phone" target="post" weight="7.000000" />
+<edge id="1020" source="sure" target="unless" weight="4.000000" />
+<edge id="1021" source="indie" target="piano" weight="1.000000" />
+<edge id="1022" source="brilliant" target="got" weight="3.000000" />
+<edge id="1023" source="hasn" target="old" weight="3.000000" />
+<edge id="1024" source="taking" target="worse" weight="3.000000" />
+<edge id="1025" source="tomorrow" target="wait" weight="4.000000" />
+<edge id="1026" source="double" target="microwave" weight="3.000000" />
+<edge id="1027" source="airports" target="power" weight="4.000000" />
+<edge id="1028" source="fume" target="woman" weight="4.000000" />
+<edge id="1029" source="making" target="power" weight="4.000000" />
+<edge id="1030" source="didn" target="eggs" weight="4.000000" />
+<edge id="1031" source="home" target="sorts" weight="2.000000" />
+<edge id="1032" source="brilliant" target="penguins" weight="2.000000" />
+<edge id="1033" source="godsake" target="kettle" weight="3.000000" />
+<edge id="1034" source="chocolate" target="make" weight="3.000000" />
+<edge id="1035" source="airports" target="shouldnt" weight="3.000000" />
+<edge id="1036" source="female-vocals" target="pop" weight="1.000000" />
+<edge id="1037" source="hate" target="justcauseimgoingaway" weight="3.000000" />
+<edge id="1038" source="places" target="years" weight="3.000000" />
+<edge id="1039" source="indie-rock" target="rock" weight="2.000000" />
+<edge id="1040" source="making" target="taking" weight="3.000000" />
+<edge id="1041" source="chocolate" target="gluten" weight="3.000000" />
+<edge id="1042" source="airports" target="places" weight="6.000000" />
+<edge id="1043" source="havent" target="remembering" weight="8.000000" />
+<edge id="1044" source="chocolate" target="inside" weight="5.000000" />
+<edge id="1045" source="got" target="singapore" weight="3.000000" />
+<edge id="1046" source="feels" target="just" weight="3.000000" />
+<edge id="1047" source="able" target="airports" weight="3.000000" />
+<edge id="1048" source="car" target="crash" weight="7.000000" />
+<edge id="1049" source="bourbons" target="late" weight="3.000000" />
+<edge id="1050" source="hasn" target="years" weight="4.000000" />
+<edge id="1051" source="sister" target="sorts" weight="2.000000" />
+<edge id="1052" source="double" target="just" weight="3.000000" />
+<edge id="1053" source="binned" target="let" weight="3.000000" />
+<edge id="1054" source="inside" target="little" weight="3.000000" />
+<edge id="1055" source="hate" target="like" weight="4.000000" />
+<edge id="1056" source="alternative-rock" target="hard-rock" weight="1.000000" />
+<edge id="1057" source="eat" target="open" weight="3.000000" />
+<edge id="1058" source="shouldnt" target="wide" weight="3.000000" />
+<edge id="1059" source="bag" target="lady" weight="3.000000" />
+<edge id="1060" source="feed" target="sorts" weight="2.000000" />
+<edge id="1061" source="drive" target="shouldnt" weight="3.000000" />
+<edge id="1062" source="airports" target="month" weight="3.000000" />
+<edge id="1063" source="little" target="shit" weight="3.000000" />
+<edge id="1064" source="airports" target="middle" weight="3.000000" />
+<edge id="1065" source="able" target="just" weight="3.000000" />
+<edge id="1066" source="alternative" target="alternative-rock" weight="2.000000" />
+<edge id="1067" source="hasn" target="offered" weight="3.000000" />
+<edge id="1068" source="sat" target="saying" weight="4.000000" />
+<edge id="1069" source="broke" target="crash" weight="7.000000" />
+<edge id="1070" source="mcfly" target="pop" weight="1.000000" />
+<edge id="1071" source="just" target="stansted" weight="3.000000" />
+<edge id="1072" source="acoustic" target="singer-songwriter" weight="1.000000" />
+<edge id="1073" source="chocolate" target="tempted" weight="4.000000" />
+<edge id="1074" source="folk" target="piano" weight="1.000000" />
+<edge id="1075" source="fat" target="sat" weight="3.000000" />
+<edge id="1076" source="hahaha" target="sat" weight="3.000000" />
+<edge id="1077" source="sister" target="whatawaste" weight="3.000000" />
+<edge id="1078" source="coconut" target="happens" weight="3.000000" />
+<edge id="1079" source="day" target="today" weight="3.000000" />
+<edge id="1080" source="took" target="woman" weight="4.000000" />
+<edge id="1081" source="day" target="feed" weight="2.000000" />
+<edge id="1082" source="listened" target="massive" weight="6.000000" />
+<edge id="1083" source="got" target="sorts" weight="2.000000" />
+<edge id="1084" source="chocolate" target="eat" weight="3.000000" />
+<edge id="1085" source="just" target="time" weight="4.000000" />
+<edge id="1086" source="catchy" target="latin" weight="1.000000" />
+<edge id="1087" source="chocolate" target="godsake" weight="3.000000" />
+<edge id="1088" source="airports" target="hasn" weight="3.000000" />
+<edge id="1089" source="2011" target="lady-gaga" weight="1.000000" />
+<edge id="1090" source="manchester" target="turn" weight="3.000000" />
+<edge id="1091" source="alternative-rock" target="indie-rock" weight="1.000000" />
+</edges>
+</graph>
+</gexf>

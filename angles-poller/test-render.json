@@ -1,0 +1,23 @@
+{
+  "input": "test-data.gexf",
+  "output": "output.png",
+  "width": 512,
+  "height": 512,
+  "kcoreFilter": {
+    "k" : 9
+  },
+  "colour": {
+    "background": "fdedef",
+    "outline": "fdc8d1"
+  },
+  "opacity": {
+    "outline": 40,
+    "node": 0,
+    "edge": 10
+  },
+  "thickness": {
+    "edge": 5,
+    "outline": 5
+  },
+  "colourloversPalette": 629637
+}

@@ -25,6 +25,7 @@
 # Phactory Ltd..
 #
 
+import os
 import traceback
 import logging
 import urllib2
@@ -66,41 +67,20 @@ class AnglesPoller(Poller):
         if instance_name == '' :
             instance_name = 'weavrs-angles' # default
 
-
-        try :
-            data = json.loads(run['data'])
-            print "Do something clever for:"
-            print data['name']
-            permalink_url = "http://www.example.com/"
-
-        except urllib2.HTTPError, e :
-            # soundcloud error codes #
-            ##400 Bad Request 	Check if your request is a valid HTTP request.
-            ##401 Unauthorized 	Check if you've send a valid client_id or access_token.
-            ##403 Forbidden  Occurs when access to the requested resource is forbidden.
-            ##404 Not Found Occurs when the requested resource was not found or is not accessible to the user.
-            ##406 Not Acceptable 	The error description in the body will provided detailed infos why your request wasn't accepted.
-            ##500 Internal Server Error 	Occurs when an unexpected error on our side happend. Please contact us to resolve that issue.
-            ##503 Service Unavailable 	Occurs when no services are available to process your request. If possible provide your app users a way to manually trigger a retry.
-            ##504 Gateway Timeout 	Occurs when the request processing took to long. Be aware that your request could still be executed and manipulate data.
-            if e.code < 500: # dont try again with those codes
-                raise
-            return False  
-
-        if not permalink_url:
-            raise Exception("no permalink url")
+        data = json.loads(run['data'])
+        print "Making a PNG for %s" % data['name']
+        os.system("java -jar angles-gephi-20120514.jar test-render.json")
 
         id = run['run_id']
         data = {
             "run_id": id,
             "success": True,
-            "message": "I did something clever.",
-            "image1": open("testimage.jpg","rb")
+            "message": "I made you a png.",
+            "image1": open("output.png","rb")
         }
         print "posting %s"%data
         response = self.auth_call_with_files(server, "/angles/complete/", data)
         return True
-
 
 if __name__ == '__main__':
     AnglesPoller().start()
