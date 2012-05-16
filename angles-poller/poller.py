@@ -86,7 +86,7 @@ class AnglesPoller(Poller):
         data = {
             "run_id": id,
             "success": True,
-            "message": "Keyword interactions for this week."
+            "message": "Keyword interactions for this week.",
             "image1": open("/tmp/render.png","rb")
         }
         print "posting %s"%data
