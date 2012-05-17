@@ -57,7 +57,7 @@
     <mkdir dir="${dist}"/>
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/angles-gephi-${DSTAMP}.jar" basedir="${build}"/>
+    <jar jarfile="${dist}/angles-gephi-${DSTAMP}.jar" basedir="${build}"/>
   </target>
 
 
