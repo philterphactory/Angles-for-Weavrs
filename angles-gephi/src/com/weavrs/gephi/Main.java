@@ -9,15 +9,9 @@ public class Main {
     ObjectMapper mapper = new ObjectMapper();
     for(String filename : args) {
       try {
-        URL url;
         File file = new File(filename);
-        if(file.exists()) {
-          url = file.toURI().toURL();
-        } else {
-          url = new URL(filename);
-        }
         Render render = new YifanByDegreeRender();
-        render.setConfig(mapper.readTree(url));
+        render.setConfig(mapper.readTree(file));
         long started = System.currentTimeMillis();
         render.render();
         System.out.format("%s rendered in %dms.\n", filename, System.currentTimeMillis() - started);
