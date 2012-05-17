@@ -51,12 +51,22 @@
     </java>
   </target>
 
+  <target name="jar" depends="compile"
+    description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/lib/angles-gephi-${DSTAMP}.jar" basedir="${build}"/>
+  </target>
+
+
   <target name="dist" depends="compile"
     description="generate the distribution" >
     <!-- Create the distribution directory -->
     <mkdir dir="${dist}"/>
 
-    <one-jar destfile="${dist}/angles-gephi-${DSTAMP}.jar">
+    <one-jar destfile="${dist}/angles-gephi-onejar-${DSTAMP}.jar">
       <manifest>
         <attribute name="One-Jar-Main-Class" value="com.weavrs.gephi.Main"/>
       </manifest>
