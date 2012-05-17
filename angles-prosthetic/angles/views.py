@@ -26,7 +26,8 @@ from __future__ import with_statement # Note this MUST go at the top of your vie
 #
 
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render_to_response, redirect
+from django.template import RequestContext
 from webapp.models import AccessToken
 from google.appengine.api import files, urlfetch
 from google.appengine.ext import blobstore
@@ -36,6 +37,7 @@ from django.utils.http import http_date
 import traceback
 import time, datetime
 import models
+import forms
 import logging
 try: from django.utils import simplejson as json
 except ImportError: import json
@@ -48,8 +50,47 @@ def test(request):
 
 def config(request, weavr_token):
   token = get_object_or_404(AccessToken, oauth_key=weavr_token)    
+
+  # add the default
+  if token.data is None or not token.data:
+      token.data = json.dumps({"job": json.dumps({
+          "font": { "name": "Arial", "size": 14 },
+          "kcoreFilter": { "k" : 9 },
+          "colour": { "background": "000000", "outline": "cccccc" },
+          "opacity": { "outline": 40, "node": 50, "edge": 10 },
+          "thickness": { "edge": 10, "outline": 1 },
+          "colourloversPalette": 4182
+          })})
+      token.save()
+
+  current_config = json.loads(token.data)
+  current_job = json.loads(current_config['job'])
   
-  return HttpResponse('{"correctly_installed_for_weavr":"' + str(token.weavr_url) + '"}', mimetype="application/json")
+  if request.method == 'POST':
+    form = forms.ConfigForm(request.POST)
+    if form.is_valid():
+      if form.cleaned_data['transparent_background']:
+          current_job['colour']['background'] = 'transparent'
+      else:
+          if form.cleaned_data['background_colour']:
+              current_job['colour']['background'] = form.cleaned_data['background_colour']
+          else:
+              current_job['colour']['background'] = '000000'
+
+      current_config['job'] = json.dumps(current_job)
+      token.data = json.dumps(current_config)
+      token.save()
+      return http.HttpResponseRedirect('/angles/config/%s/' % weavr_token)
+  else:
+    formdata = {
+        'transparent_background': (current_job['colour']['background'] == 'transparent')
+    }
+    if current_job['colour']['background'] != 'transparent':
+        formdata['background_colour'] = current_job['colour']['background']
+    form = forms.ConfigForm(formdata)
+
+  return render_to_response("config.html", locals(),
+    context_instance=RequestContext(request))
 
 # http://blainegarrett.com/2011/04/02/appengine-files-api-part-1-storingfetching-remote-images-in-blobstore-using-django/
 def blob(request, blob_key):
@@ -99,6 +140,21 @@ def pending(request):
 
     
     return HttpResponse(blob_key, content_type="text/plain")
+
+def pending_flush(request):
+    """ empties the pending queue without doing anything about the jobs. for debug use. """
+    try :
+        config = models.config()
+    except DeadlineExceededError, e :
+        logging.warning( '%s error getting whistler_config' % e)
+        logging.warning( traceback.format_exc() )
+        return None
+
+    response = authenticate(request, config)
+    if response: return response
+
+    count = len([x.delete() for x in models.AnglesRun.objects.filter(completed__isnull=True)])
+    return HttpResponse("OK: %d deleted." % count, content_type="text/plain")
 
 def complete(request):
     """ called from poller on sucessful run."""

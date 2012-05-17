@@ -31,6 +31,7 @@ import views
 urlpatterns = patterns('',
     ( r"^test$", views.test ),
     ( r"^pending/$", views.pending ),
+    ( r"^pending/flush/$", views.pending_flush ),
     ( r"^complete/$", views.complete ),
     ( r"^failed/$", views.failed ),
     ( r"^blob/(.*?)/$", views.blob ),

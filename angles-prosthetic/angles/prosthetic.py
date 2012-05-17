@@ -34,6 +34,8 @@ from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 from google.appengine.api import files, urlfetch
 from angles import models
+try: from django.utils import simplejson as json
+except ImportError: import json
 
 one_week = datetime.timedelta(7)
 
@@ -91,36 +93,21 @@ class Angles(Prosthetic):
         "keywords":"testing"
       })
 
-    self.state = {
-        'gexf': self.load_gexf(),
-        'job':"""
-{
-  "input": "to-be-replaced",
-  "output": "to-be-replaced",
-  "font": {
-     "name": "Ostrich Sans",
-     "size": 18
-  },
-  "kcoreFilter": {
-    "k" : 9
-  },
-  "colour": {
-    "background": "000000",
-    "outline": "cccccc"
-  },
-  "opacity": {
-    "outline": 40,
-    "node": 50,
-    "edge": 10
-  },
-  "thickness": {
-    "edge": 10,
-    "outline": 1
-  },
-  "colourloversPalette": 4182
-}
-"""
-    }
+    # make sure the token has its job config data -- if not, make a default one
+    if self.token.data is None or not self.token.data:
+        self.state = {}
+        self.state['job'] = json.dumps({
+            "font": { "name": "Arial", "size": 14 },
+            "kcoreFilter": { "k" : 9 },
+            "colour": { "background": "000000", "outline": "cccccc" },
+            "opacity": { "outline": 40, "node": 50, "edge": 10 },
+            "thickness": { "edge": 10, "outline": 1 },
+            "colourloversPalette": 4182
+            })
+    else:
+        self.state = json.loads(self.token.data)
+
+    self.state['gexf'] = self.load_gexf()
 
     run = models.AnglesRun(weavr_token = self.token)
     run.save()
