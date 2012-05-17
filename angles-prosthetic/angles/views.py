@@ -69,6 +69,8 @@ def config(request, weavr_token):
   if request.method == 'POST':
     form = forms.ConfigForm(request.POST)
     if form.is_valid():
+      if form.cleaned_data['kcore']:
+          current_job['kcoreFilter']['k'] = form.cleaned_data['kcore']
       if form.cleaned_data['transparent_background']:
           current_job['colour']['background'] = 'transparent'
       else:
@@ -83,7 +85,8 @@ def config(request, weavr_token):
       return http.HttpResponseRedirect('/angles/config/%s/' % weavr_token)
   else:
     formdata = {
-        'transparent_background': (current_job['colour']['background'] == 'transparent')
+        'transparent_background': (current_job['colour']['background'] == 'transparent'),
+        'kcore': current_job['kcoreFilter']['k']
     }
     if current_job['colour']['background'] != 'transparent':
         formdata['background_colour'] = current_job['colour']['background']

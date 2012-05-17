@@ -9,3 +9,4 @@ def validate_hexcolour(value):
 class ConfigForm(forms.Form):
     transparent_background = forms.BooleanField(required=False)
     background_colour = forms.CharField(required=False, max_length=6, validators=[validate_hexcolour], help_text='A six-figure hexadecimal colour, e.g. 2299AA')
+    kcore = forms.IntegerField(required=True, help_text='How much to strip down the graph. 5 is a good value.')
