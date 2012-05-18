@@ -55,7 +55,7 @@ def config(request, weavr_token):
   if token.data is None or not token.data:
       token.data = json.dumps({"job": json.dumps({
           "font": { "name": "Arial", "size": 14 },
-          "kcoreFilter": { "k" : 9 },
+          "kcoreFilter": { "k" : 3 },
           "colour": { "background": "000000", "outline": "cccccc" },
           "opacity": { "outline": 40, "node": 50, "edge": 10 },
           "thickness": { "edge": 10, "outline": 1 },
