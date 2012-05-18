@@ -69,15 +69,15 @@ def config(request, weavr_token):
   if request.method == 'POST':
     form = forms.ConfigForm(request.POST)
     if form.is_valid():
-      if form.cleaned_data['kcore']:
-          current_job['kcoreFilter']['k'] = form.cleaned_data['kcore']
-      if form.cleaned_data['transparent_background']:
-          current_job['colour']['background'] = 'transparent'
+      current_job['kcoreFilter']['k'] = form.cleaned_data['kcore']
+      current_job['colour']['background'] = form.cleaned_data['background_colour'].lower()
+      current_job['font']['name'] = form.cleaned_data['font_name']
+      current_job['font']['size'] = form.cleaned_data['font_size']
+      if form.cleaned_data['colourlovers_palette_id']:
+          current_job['colourloversPalette'] = form.cleaned_data['colourlovers_palette_id']
       else:
-          if form.cleaned_data['background_colour']:
-              current_job['colour']['background'] = form.cleaned_data['background_colour']
-          else:
-              current_job['colour']['background'] = '000000'
+          if current_job.has_key('colourloversPalette'):
+              del current_job['colourloversPalette']
 
       current_config['job'] = json.dumps(current_job)
       token.data = json.dumps(current_config)
@@ -85,11 +85,13 @@ def config(request, weavr_token):
       return http.HttpResponseRedirect('/angles/config/%s/' % weavr_token)
   else:
     formdata = {
-        'transparent_background': (current_job['colour']['background'] == 'transparent'),
-        'kcore': current_job['kcoreFilter']['k']
+        'background_colour': current_job['colour']['background'],
+        'kcore': current_job['kcoreFilter']['k'],
+        'font_name': current_job['font']['name'],
+        'font_size': current_job['font']['size'],
     }
-    if current_job['colour']['background'] != 'transparent':
-        formdata['background_colour'] = current_job['colour']['background']
+    if current_job.has_key('colourloversPalette'):
+        formdata['colourlovers_palette_id'] = current_job['colourloversPalette']
     form = forms.ConfigForm(formdata)
 
   return render_to_response("config.html", locals(),

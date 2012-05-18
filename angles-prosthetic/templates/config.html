@@ -6,13 +6,17 @@
 {% block page_body %}
 
     <section>
-    <h2>Configuration page for {{ token.weavr_name }} </h2>
+    <h2>Rendering choices for {{ token.weavr_name }} </h2>
         <p class="boring">This is the current setup for your Angles render. Hint: if you bookmark this page you can come back later and change your mind.</p>
         <form action="" method="post">{% csrf_token %}
           {{ form.as_p }}
 
-          <input type="submit" value="Submit" />
+          <br />
+          <input type="submit" value="Save" />
         </form>
+        <!-- DEBUG current job json:
+        {{ current_config.job|safe }}
+        -->
     </section>
 
 {% endblock page_body %}
