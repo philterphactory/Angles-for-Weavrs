@@ -91,6 +91,7 @@ class AnglesPoller(Poller):
         }
         print "posting %s"%data
         response = self.auth_call_with_files(server, "/angles/complete/", data)
+        print "posted %s"%data
         return True
 
 if __name__ == '__main__':
