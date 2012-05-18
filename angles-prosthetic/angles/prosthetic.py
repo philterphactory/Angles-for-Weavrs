@@ -27,6 +27,7 @@ from __future__ import with_statement
 
 import logging
 import views
+import re
 import datetime
 from base_prosthetic import Prosthetic, persist_state
 
@@ -54,8 +55,8 @@ class Angles(Prosthetic):
 
   @classmethod
   def time_between_runs(cls):
-    # daily
-    return 4*60*60
+      # daily
+      return 24*60*60
 
   def post_oauth_callback(self):
     return redirect(reverse(views.config, args=[self.token.oauth_key]))
@@ -109,26 +110,47 @@ class Angles(Prosthetic):
 
     self.state['gexf'] = self.load_gexf()
 
+    # check for most-recent palette post and use it to override palette in the job
+    colourposts = self.token.get_json("/1/weavr/post", {"category":"palette", "per_page":1})
+    if len(colourposts['posts']) == 1:
+        url = colourposts['posts'][0]['source_url']
+        logging.info("Found a palette source URL: %s" % url)
+        colourmatch = re.search('palette/([0-9]+)/', url)
+        if colourmatch is not None:
+            colour_id = colourmatch.group(1)
+            logging.info("Replacing palette in the render job with %s" % colour_id)
+
+            # unfortunately have to un-parse the JSON, modify it then dump it out again
+            job = json.loads(self.state['job'])
+            job['colourloversPalette'] = colour_id
+            self.state['job'] = json.dumps(job)
+
     run = models.AnglesRun(weavr_token = self.token)
     run.save()
     return True
 
   def load_gexf(self):
-    run = self.token.get_json("/1/weavr/post", {
-      'before':format_datetime(datetime.datetime.now()),
-      'after':format_datetime(datetime.datetime.now() - one_week),
-      'per_page':1000
-    })
+    blacklist = set(['just'])
+
+    runs = [self.token.get_json("/1/weavr/post", {
+      'before':format_datetime(datetime.datetime.now() - datetime.timedelta(n)),
+      'after':format_datetime(datetime.datetime.now() - datetime.timedelta(n+1)),
+      'per_page':50
+    }) for n in range(0,7)] # a week, retrieved a day at a time
+
     node_names = set()
     edges = dict()
-    for post in run['posts']:
-        keywords = list(set(post['keywords'].split()))
-        node_names.update(keywords)
-        for pair in all_pairs(keywords):
-            # Make sure a/b and b/a are counted the same
-            edge = tuple(sorted(pair))
-            edges[edge] = edges.get(edge, 0) + 1
+    for run in runs:
+        for post in run['posts']:
+            keywords = list(set(post['keywords'].split()))
+            keywords = [keyword for keyword in keywords if keyword.lower() not in blacklist]
+            node_names.update(keywords)
+            for pair in all_pairs(keywords):
+                # Make sure a/b and b/a are counted the same
+                edge = tuple(sorted(pair))
+                edges[edge] = edges.get(edge, 0) + 1
     nodes = list(node_names)
+    logging.info("Made a GEXF graph with %d nodes and %d edges." % (len(nodes), len(edges)))
 
     # xml dump
     gexf = u''
