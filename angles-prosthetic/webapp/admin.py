@@ -174,6 +174,10 @@ def admin_action(request, key):
     
     return redirect("/admin/webapp/accesstoken/%s/"%key)
 
+def view_config(request, key):
+    token = get_object_or_404(AccessToken, id=key)
+    return redirect("/angles/config/%s/" % token.oauth_key)
+
 def view_blog(request, key):
     token = get_object_or_404(AccessToken, id=key)
     logging.info(token.blog_filter_url())
