@@ -27,3 +27,6 @@ sloganeer
 whistling
 
 .idea
+.classpath
+.project
+angles-poller/server_settings.py
