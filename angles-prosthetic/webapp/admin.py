@@ -153,7 +153,7 @@ admin.site.register(RequestToken, RequestTokenAdmin)
 
 # Angles admin
 class AnglesRunAdmin(admin.ModelAdmin):
-    list_display = ( "bot_name", "success", "created", )
+    list_display = ( "id", "bot_name", "success", "created", "post_id")
 
 admin.site.register(AnglesRun, AnglesRunAdmin)
 
