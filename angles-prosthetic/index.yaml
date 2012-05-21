@@ -40,6 +40,11 @@ indexes:
   - name: success
   - name: created
 
+- kind: angles_anglesrun
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: clique_weavrcliquegroupmembership
   properties:
   - name: __key__

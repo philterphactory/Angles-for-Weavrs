@@ -24,20 +24,19 @@
 #
 
 from django.contrib import admin
-import djangotoolbox.fields as toolbox
-from django import forms
+
 from django.forms import ModelForm
-from django.shortcuts import get_object_or_404, render_to_response, redirect
-from django.db import models
+from django.shortcuts import get_object_or_404, redirect
 from django.contrib import messages
 from django.utils.html import escape
+from models import *
+from angles.models import *
 
 try: from django.utils import simplejson as json
 except ImportError: import json
 
+import djangotoolbox.fields as toolbox
 import datetime
-
-from models import *
 
 try:
     from google.appengine.api.taskqueue import Task
@@ -152,7 +151,11 @@ admin.site.register(Prosthetic, ProstheticAdmin)
 admin.site.register(AccessToken, AccessTokenAdmin)
 admin.site.register(RequestToken, RequestTokenAdmin)
 
+# Angles admin
+class AnglesRunAdmin(admin.ModelAdmin):
+    list_display = ( "bot_name", "success", "created", )
 
+admin.site.register(AnglesRun, AnglesRunAdmin)
 
 def admin_action(request, key):
     token = get_object_or_404(AccessToken, id=key)
