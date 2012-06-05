@@ -90,7 +90,9 @@ customised per Weavr. It made sense to describe the parameters of a
 rendering job using a [JSON config
 file](https://github.com/philterphactory/Angles-for-Weavrs/blob/master/angles-gephi/sample-render-1.json),
 since that would be easy to pass around between components of the
-architecture later. 
+architecture later. I also created a build.xml config for the Ant build
+tool so that we could easily build standalone jar files for deployment
+later.
 
 After the visualisation was ready, I worked with [Graham
 O'Regan](https://github.com/grahamoregan) who created an instance of the
@@ -120,3 +122,31 @@ authentication process. This was done using a redirect in the
 
 Testing and deployment
 ----------------------
+
+Deploying the prosthetic web interface was simple - Graham created an
+Appengine instance for it and gave me deployment permissions. I was able
+to deploy the code directly from the desktop AppEngine Launcher whenever
+i liked.
+
+I didn't have access to the server that the poller and renderer would
+run on, so I don't have much insight into their deployment. The biggest
+delay was caused by Java code that ran fine on my development machine
+and on a test VM, but didn't work on the server. This may have been due
+to the use of Java 1.6 in devlopment and Java 1.5 on the server. It was
+eventually solved by Graham with the addition of some classpath and jar
+dependencies. He deployed further updates via a pull from the Github
+repository whenever I had pushed a change.
+
+During testing it was beneficial to set the *time_between_runs* in the
+prosthetic to a value of 1, meaning that it was possible to run the
+cronjob as often as we liked (to generate new AnglesRuns). All prosthetic
+crons can be manually run by hitting the path */runner/run_cron* on the
+prosthetic's Appengine instance in a web browser. Monitoring its
+progress via the application logs in the Appengine control panel was
+also essential.
+
+The Django admin pages at the path */admin* were also very useful after
+authorising a Weavr with the prosthetic. Using these I was able to check
+what OAuth tokens were authorised. I also added a useful diagnostic link to the
+AccessToken admin page to [view the Angles
+config](https://github.com/philterphactory/Angles-for-Weavrs/commit/b4bec2776db5eb10eb9d436686c6bd71e205445c).
