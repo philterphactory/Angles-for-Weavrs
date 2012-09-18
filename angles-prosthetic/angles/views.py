@@ -158,7 +158,9 @@ def pending_flush(request):
     response = authenticate(request, config)
     if response: return response
 
-    count = len([x.delete() for x in models.AnglesRun.objects.filter(completed__isnull=True)])
+    deletable = models.AnglesRun.objects.filter(completed__isnull=True)
+    logging.error('pending_flush: %s deletable' % len(deletable))
+    count = len([x.delete() for x in deletable])
     return HttpResponse("OK: %d deleted." % count, content_type="text/plain")
 
 def complete(request):
