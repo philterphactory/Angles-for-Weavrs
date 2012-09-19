@@ -88,6 +88,11 @@ class AnglesPoller(Poller):
         job = open("/tmp/render.json","w")
         job.write(json.dumps(job_json))
         job.close()
+        # TEMP - keep a copy of the input files for debugging purposes
+        import shutil
+        shutil.copyfile('/tmp/render.gexf', '/tmp/render.gexf.rachel')
+        shutil.copyfile('/tmp/render.json', '/tmp/render.json.rachel')
+        # end of TEMP
         logging.info("os.system call starting")
         import sys
         logging.info("PATH: %s" % sys.path)
