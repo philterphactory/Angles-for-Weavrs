@@ -65,7 +65,7 @@ except ImportError:
     except ImportError:
         # or you can set them here 
         logging.warn("Can't find server_settings.py at all - assuming development mode")
-        PTK_SERVER="localhost:8000"
+        PTK_SERVER="localhost:8080"
         PTK_PASSWORD="helloworld" # MUST match value in Config object on ptk server
 
     PTK_SERVERS = [ [ PTK_SERVER, PTK_PASSWORD ] ]
@@ -93,17 +93,21 @@ class Poller(object):
     
     # default poller
     def poll(self, server):
+        logging.info("poll start")
         data = self.auth_call(server, self.pending_url)
         if not data:
             return False
     
         pending = json.loads(data)
         if not pending:
+            logging.info("poll end: nothing to do")
             return False
     
+        logging.info("looping through pending")
         for run in pending:
             track = self.render(server, run)
-    
+
+        logging.info("poll end: ok")
         return True
     
     def after_poll(self):
@@ -144,6 +148,7 @@ class Poller(object):
     
     def start(self):
         now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        logging.info("start")
         print "******* %s starting up @ %s *******" %(self.__class__.__name__, now)
 
         class TimeoutException(Exception):
@@ -155,7 +160,10 @@ class Poller(object):
 
         servers = map(WeavrServer, PTK_SERVERS)
 
+        logging.info("Entering while loop")
         while True:
+            logging.info("start of while loop")
+            
             did_something = False
 
             # in case one of them is _really_ broken, we'll shuffle every run so everonye
@@ -175,10 +183,14 @@ class Poller(object):
                     time.sleep(20)
                 signal.alarm(0)
             
+            logging.info("calling after_poll")
             self.after_poll()
 
 
             # ping phloor to tell it about this mediasynth
+
+            logging.info("pinging phloor")
+            
             phloor_server = "http://phloor.weavrs.com/ping/"
     
             try:

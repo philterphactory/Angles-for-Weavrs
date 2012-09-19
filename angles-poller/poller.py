@@ -40,9 +40,12 @@ class AnglesPoller(Poller):
 
     def render(self, server, run):
 
+        logging.info("render start")
+        
         id = run['run_id']
 
         try:
+            logging.info("render end ok")
             return self.safe_render(server, run)
         except Exception, e:
             logging.warn("Failing : %s\n%s"%(e, traceback.format_exc(e)))
@@ -50,7 +53,9 @@ class AnglesPoller(Poller):
                 "run_id":id,
                 "error_record" :unicode(e)
             }
+            logging.info("making auth_call")
             self.auth_call(server, "/angles/failed/", data)
+            logging.info("render end fail")
             return False
 
 
@@ -81,8 +86,10 @@ class AnglesPoller(Poller):
         job = open("/tmp/render.json","w")
         job.write(json.dumps(job_json))
         job.close()
+        logging.info("os.system call starting")
         os.system("java -cp lib/angles-gephi.jar:lib/gephi-toolkit.jar:lib/jackson-annotations-2.0.1.jar:lib/jackson-core-2.0.1.jar:lib/jackson-databind-2.0.1.jar com.weavrs.gephi.Main /tmp/render.json")
-
+        logging.info("os.system call completed")
+        
         data = {
             "run_id": id,
             "success": True,
@@ -90,8 +97,13 @@ class AnglesPoller(Poller):
             "image1": open("/tmp/render.png","rb")
         }
         print "posting %s"%data
+        logging.info("posting %s" % data)
+
         response = self.auth_call_with_files(server, "/angles/complete/", data)
         print "posted %s"%data
+        logging.info("posted %s" % data)
+        logging.info("returning from safe_render")
+        
         return True
 
 if __name__ == '__main__':
