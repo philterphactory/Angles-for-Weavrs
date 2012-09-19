@@ -55,6 +55,7 @@ class Angles(Prosthetic):
 
   @classmethod
   def time_between_runs(cls):
+      return 1
       # daily
       # return 24*60*60
       return 2*60*60

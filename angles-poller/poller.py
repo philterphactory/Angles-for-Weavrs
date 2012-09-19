@@ -60,7 +60,9 @@ class AnglesPoller(Poller):
 
 
     def safe_render(self, server ,run):
-        print "rendering on server %s with data %r" % (server,run)
+        #print "rendering on server %s with data %r" % (server,run)
+        shortdata = ('%r' % run)[:200]
+        print "rendering on server %s with data %r..." % (server, shortdata)
 
         # kind of crude but just in case ...
         try :
@@ -87,6 +89,8 @@ class AnglesPoller(Poller):
         job.write(json.dumps(job_json))
         job.close()
         logging.info("os.system call starting")
+        import sys
+        logging.info("PATH: %s" % sys.path)
         os.system("java -cp lib/angles-gephi.jar:lib/gephi-toolkit.jar:lib/jackson-annotations-2.0.1.jar:lib/jackson-core-2.0.1.jar:lib/jackson-databind-2.0.1.jar com.weavrs.gephi.Main /tmp/render.json")
         logging.info("os.system call completed")
         
