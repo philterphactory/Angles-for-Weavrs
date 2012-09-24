@@ -97,7 +97,7 @@ class AnglesPoller(Poller):
         import sys
         logging.info("PATH: %s" % sys.path)
         os.system("java -version")
-        os.system("java -cp lib/angles-gephi.jar:lib/gephi-toolkit.jar:lib/jackson-annotations-2.0.1.jar:lib/jackson-core-2.0.1.jar:lib/jackson-databind-2.0.1.jar com.weavrs.gephi.Main /tmp/render.json")
+        os.system("java -cp lib/angles-gephi.jar:lib/gephi-toolkit.jar:lib/jackson-annotations-2.0.1.jar:lib/jackson-core-2.0.1.jar:lib/jackson-databind-2.0.1.jar:lib/org-netbeans-modules-masterfs.jar com.weavrs.gephi.Main /tmp/render.json")
         logging.info("os.system call completed")
         
         data = {
